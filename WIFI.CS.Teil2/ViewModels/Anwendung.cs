@@ -491,5 +491,25 @@ namespace WIFI.CS.Teil2.ViewModels
             }
         }
 
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private LottoManager _Lotto = null;
+
+        /// <summary>
+        /// Ruft den Dienst zum Verwalten der Lottodaten ab
+        /// </summary>
+        public LottoManager Lotto
+        {
+            get
+            {
+                if (this._Lotto == null)
+                {
+                    this._Lotto = this.AppKontext.Produziere<ViewModels.LottoManager>();
+                }
+                return this._Lotto;
+            }
+        }
+
     }
 }

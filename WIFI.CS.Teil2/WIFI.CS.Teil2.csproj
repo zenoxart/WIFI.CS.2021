@@ -58,6 +58,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\ILottoController.cs" />
+    <Compile Include="Models\LottoOfflineController.cs" />
+    <Compile Include="Models\LottoWebController.cs" />
+    <Compile Include="ViewModels\LottoManager.cs" />
     <Compile Include="Views\Einstellungsfenster.xaml.cs">
       <DependentUpon>Einstellungsfenster.xaml</DependentUpon>
     </Compile>
