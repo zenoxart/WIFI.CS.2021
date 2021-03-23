@@ -1,0 +1,18 @@
+Die Binärentscheidung
+
+Die if-Anweisung wählt eine Anweisung für die 
+Ausführung anhand des Werts eines Boolean-Ausdrucks 
+aus. Im folgenden Beispiel wird ein Boolean-Flag 
+flagCheck auf true festgelegt und anschließend in 
+der if-Anweisung geprüft. Die Ausgabe lautet 
+The flag is set to true.
+
+bool flagCheck = true;
+if (flagCheck)
+{
+    Console.WriteLine("The flag is set to true.");
+}
+else 
+{
+    Console.WriteLine("The flag is set to false.");
+}

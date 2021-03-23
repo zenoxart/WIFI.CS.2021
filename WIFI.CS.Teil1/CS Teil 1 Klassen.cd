@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WIFI.CS.Teil1.Hauptfenster">
+    <Position X="3" Y="3.25" Width="2" />
+    <Members>
+      <Field Name="_AktuellesObjekt" Hidden="true" />
+      <Field Name="_Sprachwechsel" Hidden="true" />
+      <Field Name="_Verlauf" Hidden="true" />
+      <Field Name="AktionenBeenden" Hidden="true" />
+      <Field Name="AktionenKopieren" Hidden="true" />
+      <Field Name="AktionenLinie01" Hidden="true" />
+      <Field Name="AktionenLinie02" Hidden="true" />
+      <Field Name="AktionenSeitenansicht" Hidden="true" />
+      <Field Name="AktionenSpeichernUnter" Hidden="true" />
+      <Field Name="Auswahl" Hidden="true" />
+      <Field Name="AuswahlAbweisen" Hidden="true" />
+      <Field Name="AuswahlAllgemein" Hidden="true" />
+      <Field Name="AuswahlBinär" Hidden="true" />
+      <Field Name="AuswahlDurchlaufen" Hidden="true" />
+      <Field Name="AuswahlFall" Hidden="true" />
+      <Field Name="AuswahlStruktur" Hidden="true" />
+      <Field Name="AuswahlZählen" Hidden="true" />
+      <Field Name="BeimBeendenFragen" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="ImageListVerlauf" Hidden="true" />
+      <Field Name="Inhalt" Hidden="true" />
+      <Field Name="Kopfbereich" Hidden="true" />
+      <Field Name="MenüAktionen" Hidden="true" />
+      <Field Name="Menüzeile" Hidden="true" />
+      <Field Name="Sprachen" Hidden="true" />
+      <Field Name="Titel" Hidden="true" />
+      <Field Name="Vorwärts" Hidden="true" />
+      <Field Name="Zurück" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BgAAAEQIAKQIICAYAQSAIBACQEAQQAAAxqAAQEQQEQQ=</HashCode>
+      <FileName>Hauptfenster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Teil1.Anwendung">
+    <Position X="0.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Anwendung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Teil1.Begrüßung">
+    <Position X="8" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAIAAAAgAAAACAAAACAAAgAAAQAAQAAA=</HashCode>
+      <FileName>Begrüßung.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.CS.Teil1.Information">
+    <Position X="10.5" Y="3.75" Width="2" />
+    <Members>
+      <Field Name="_Pfad" Hidden="true" />
+      <Field Name="_Text" Hidden="true" />
+      <Field Name="_Titel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAACAEAAAAAAIAAAAgBAAACAAAACAAAoAAASABQAQA=</HashCode>
+      <FileName>Information.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.Windows.Forms.AppFenster">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.Anwendung.AppKontext">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="WIFI.Anwendung.AppObjekt">
+    <Position X="9.25" Y="0.5" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="WIFI.CS.Teil1.IHauptfensterObjekt">
+    <Position X="5.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAIAAAAgAAAACAAAACAAAgAAAQAAQAAA=</HashCode>
+      <FileName>IHauptfensterObjekt.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

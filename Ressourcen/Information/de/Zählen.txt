@@ -1,0 +1,24 @@
+Die Zählschleife
+
+Mit der for-Schleife wird eine Anweisung oder ein 
+Anweisungsblock wiederholt ausgeführt, bis ein 
+bestimmter Ausdruck den Wert false liefert. Die 
+for-Schleife ist nützlich zum Durchlaufen von 
+Arrays und für sequenzielle Verarbeitung. Im 
+folgenden Beispiel wird der Wert von int i in der 
+Konsole ausgegeben, und i wird bei jedem 
+Schleifendurchlauf um 1 erhöht.
+
+Beispiel
+
+using System;
+class ForLoopTest 
+{
+    static void Main() 
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}

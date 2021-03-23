@@ -1,0 +1,22 @@
+Die Fallentscheidung
+
+Die switch-Anweisung stellt eine Steuerungsanweisung dar, 
+die mehrere Auswahlmöglichkeiten und Enumerationen 
+behandelt, indem die Steuerung an eine der 
+case-Anweisungen innerhalb ihres Texts übergeben wird. 
+
+Beispiel:
+
+int caseSwitch = 1;
+switch (caseSwitch)
+{
+    case 1: 
+        Console.WriteLine("Case 1");
+        break;
+    case 2:
+        Console.WriteLine("Case 2");
+        break;
+    default:
+        Console.WriteLine("Default case");
+        break;
+}

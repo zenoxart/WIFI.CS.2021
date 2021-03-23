@@ -1,0 +1,15 @@
+@echo off
+
+del dirs.txt
+dir /s /b /ad bin > dirs.txt
+dir /s /b /ad obj >> dirs.txt
+dir /s /b /ad .vs >> dirs.txt
+; die NuGet Pakete löschen
+dir /s /b /ad packages >> dirs.txt
+
+for /f "delims=;" %%i in (dirs.txt) DO rd /s /q "%%i"
+del dirs.txt
+
+ren BinOrdnerEntfernen.cmd *.bak
+
+

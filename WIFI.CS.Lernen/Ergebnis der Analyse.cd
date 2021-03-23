@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WIFI.CS.Lernen.Entwicklungsbasis">
+    <Position X="8" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_Anwendungspfad" Hidden="true" />
+      <Field Name="_Zufallsgenerator" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAEAAAAAAAAQAAAAAABCAABAAAAAEAAAAAA=</HashCode>
+      <FileName>Entwicklungsbasis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Lernen.Anwendung">
+    <Position X="0.5" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="_ZeigeMenüText" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAEIAA=</HashCode>
+      <FileName>Anwendung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Lernen.Algorithmus">
+    <Position X="3" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="_Lotto" Hidden="true" />
+      <Field Name="_ZeigeZählenCache" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAhAAAAAAAgAAAAgAAAEAAAAAABAAABAAAQAAAAAU=</HashCode>
+      <FileName>Algorithmus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Lernen.Textdatei">
+    <Position X="5.5" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="_Pfad" Hidden="true" />
+      <Field Name="_Zeilen" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAABEAAAAAAAAAAAABAAIABAAAA=</HashCode>
+      <FileName>Textdatei.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Lernen.Lotto">
+    <Position X="8" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="_Land" Hidden="true" />
+      <Field Name="_Länder" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAABAAAAAAAAACACAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Lotto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Lernen.LottoLand">
+    <Position X="10.5" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAwAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LottoLand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object">
+    <Position X="10.5" Y="0.5" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="WIFI.CS.Lernen.Rahmen">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAACAAAAAAIAAAAAEAgAAAAAAAQAAAA=</HashCode>
+      <FileName>Rahmen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Lernen.FehlerAufgetretenEventArgs">
+    <Position X="5.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="_Ursache" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FehlerAufgetreten.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="WIFI.CS.Lernen.AusgabeModus">
+    <Position X="3" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAYAAAAAAAAAAAAAICAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entwicklungsbasis.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="WIFI.CS.Lernen.FehlerAufgetretenEventHandler">
+    <Position X="5.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>FehlerAufgetreten.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

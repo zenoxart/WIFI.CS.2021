@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WIFI.Lotto.Daten.Länder">
+    <Position X="3" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Land.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.Lotto.Daten.Land">
+    <Position X="3" Y="1" Width="2.25" />
+    <Members>
+      <Field Name="_ISO2" Hidden="true" />
+      <Field Name="_Name" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAgIAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Land.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.Anwendung.Daten.DatenBasis">
+    <Position X="0.5" Y="1" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

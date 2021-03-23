@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Datentransferobjekte">
+    <Position X="0.5" Y="0.5" Height="0.291" Width="5.758" />
+  </Comment>
+  <Comment CommentText="Manager">
+    <Position X="6.75" Y="0.508" Height="0.291" Width="2.025" />
+  </Comment>
+  <Class Name="WIFI.Anwendung.Daten.ProtokollEintrag">
+    <Position X="4.25" Y="3.25" Width="2" />
+    <Members>
+      <Field Name="_Text" Hidden="true" />
+      <Field Name="_Typ" Hidden="true" />
+      <Field Name="_Zeitstempel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAIAAAIAEAAAAAAAAACAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Daten\Protokoll.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Typ" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="WIFI.Anwendung.Daten.InToStringAttribute">
+    <Position X="0.5" Y="1" Width="2" />
+    <Members>
+      <Field Name="_Index" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Daten\DatenBasis.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.Anwendung.Daten.DatenBasis">
+    <Position X="0.5" Y="3.25" Width="3.25" />
+    <Members>
+      <Field Name="_InToStringCache" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="WIFI.Anwendung.Daten.DatenBasis.InToStringEigenschaftBeschreibung">
+        <Members>
+          <Field Name="_Ausgabemuster" Hidden="true" />
+          <Field Name="_AusgabemusterWennNull" Hidden="true" />
+        </Members>
+        <TypeIdentifier>
+          <NewMemberFileName>Daten\DatenBasis.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="WIFI.Anwendung.Daten.DatenBasis.InToStringEigenschafBeschreibungen" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Daten\DatenBasis.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="WIFI.Anwendung.Daten.DatenBasis.InToStringEigenschaftBeschreibungenWörterbuch" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Daten\DatenBasis.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAEIACAAAAAgAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Daten\DatenBasis.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.Anwendung.Daten.ProtokollEinträge">
+    <Position X="4.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Daten\Protokoll.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.Anwendung.ProtokollManager">
+    <Position X="9.75" Y="4.5" Width="2" />
+    <Members>
+      <Field Name="_Einträge" Hidden="true" />
+      <Field Name="_EnthältFehler" Hidden="true" />
+      <Field Name="_EnthältFehlerBlinken" Hidden="true" />
+      <Field Name="_Rückrufe" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAABAAKEAFQAASAAQAAAAAAAAEAgAA=</HashCode>
+      <FileName>ProtokollManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.Anwendung.AppObjekt">
+    <Position X="6.75" Y="1.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.Anwendung.ViewModelAppObjekt">
+    <Position X="9.75" Y="1.25" Width="2" />
+    <Members>
+      <Field Name="_IstBeschäftigtZähler" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAgABAAAAAAAAoAAAAAAEiAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModelAppObjekt.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="WIFI.Anwendung.Daten.ProtokollEintragTyp">
+    <Position X="4.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABBAAAAAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Daten\Protokoll.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

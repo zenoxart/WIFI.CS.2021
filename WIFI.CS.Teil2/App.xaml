@@ -1,0 +1,203 @@
+﻿<Application x:Class="WIFI.CS.Teil2.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WIFI.CS.Teil2"
+             >
+    <Application.Resources>
+
+        <!-- Vorlage für ein Anwendungssymbol
+        
+             Hinweis:
+             Diese Ressourcen werden nur geladen,
+             wenn die WPF Anwendung "InitializeComponent" aufruft
+             (Bei uns im Main)
+        -->
+        <SolidColorBrush x:Key="SchriftfarbeDunklesDesign" Color="White"/>
+        
+        <!-- Stil für einen Anwendungsbutton mit Font-Icons -->
+        <Style 
+            x:Key="AppSymbol"
+            TargetType="Button"
+            >
+
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="FontFamily" Value="Wingdings 2" />
+            <Setter Property="FontSize" Value="22pt" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Style.Triggers>
+                
+                <!-- Weil das ändern des Microsoft-Templates im Training zu viel Arbeit wäre,
+                     deaktivierte Symbole ein bisschen Transparent machen
+                     Trigger, die auf andere Eigenschaften reagieren sollen,
+                     sind nur "Trigger" und keine "DataTrigger" -->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.3"/>
+                </Trigger>
+                
+                <!-- DataTrigger gehen auf das ViewModel im DataContext los -->
+                <DataTrigger Binding="{Binding DunklesDesign}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource SchriftfarbeDunklesDesign}"/>
+                </DataTrigger>
+            </Style.Triggers>
+
+        </Style>
+        
+        <!-- Stil für einen Anwendungsbutton mit Margin -->
+        <Style TargetType="Button" x:Key="DynamicAppBtn">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        
+        <!-- Stil für die größe eines Image-Icon in einem Button -->
+        <Style TargetType="Image" x:Key="DynamicBtnIcon">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+
+        <Style x:Key="HellDunkelDesign" TargetType="Control">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding DunklesDesign}" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource SchriftfarbeDunklesDesign}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+
+        <SolidColorBrush Color="#bb86fb" x:Key="PurpeBtnFarbe"/>
+        <SolidColorBrush Color="Orange" x:Key="OrangeBtnFarbe"/>
+
+        <!--<Border Width="100" Height="30" Background="Orange" CornerRadius="15">-->
+
+        <ControlTemplate x:Key="roundedButton" TargetType="{x:Type Button}" >
+            <Border Background="{TemplateBinding Background}" Height="30" Width="100" CornerRadius="10" >
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <ContentPresenter.Triggers>
+                        <EventTrigger RoutedEvent="Button.Click">
+                            
+                        </EventTrigger>
+                    </ContentPresenter.Triggers>
+                    
+                </ContentPresenter>
+            </Border>
+        </ControlTemplate>
+
+
+
+        <!--Border colors-->
+        <Color x:Key="BorderDarkColor">#FF444444</Color>
+
+        <!-- Controll Colors -->
+        <Color x:Key="ControlDarkColor">Lime</Color>
+
+        <Style x:Key="roundedProgressBar"
+       TargetType="{x:Type ProgressBar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ProgressBar}">
+                        <Grid MinHeight="14"
+              MinWidth="200">
+                           
+                            <Border x:Name="PART_Track"
+                  CornerRadius="10"
+                  BorderThickness="1">
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="{DynamicResource BorderDarkColor}" />
+                                </Border.BorderBrush>
+                            </Border>
+                            <Border x:Name="PART_Indicator"
+                  CornerRadius="10"
+                  BorderThickness="1"
+                  HorizontalAlignment="Left"
+                  Background="{TemplateBinding Foreground}"
+                  Margin="0,-1,0,1">
+                                <Border.BorderBrush>
+                                    <SolidColorBrush Color="{DynamicResource ControlDarkColor}"/>
+
+                                </Border.BorderBrush>
+                                
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Color="{DynamicResource BorderDarkColor}"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground">
+                <Setter.Value>
+                        <SolidColorBrush Color="{DynamicResource ControlDarkColor}"/>
+
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        
+        <ControlTemplate x:Key="AppSymbolCanExecute" TargetType="{x:Type Button}">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBEE6FD"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFC4E5F6"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBCDDEE"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF245A83"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="Transparent"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="#FF838383"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style x:Key="Line" TargetType="Line">
+            <Setter Property="Height" Value="1"/>
+            <Setter Property="Stroke" Value="Black"/>
+            <Setter Property="X1" Value="5"/>
+            <Setter Property="X2" Value="770"/>
+
+        </Style>
+
+        <ControlTemplate x:Key="roundButton" TargetType="{x:Type Button}">
+            <Border x:Name="border"  Background="{TemplateBinding Background}" SnapsToDevicePixels="True" CornerRadius="15" Focusable="False" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#6d6d6d9f" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="Gray"/>
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="Gray"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="Gray"/>
+                    <Setter Property="Foreground" Value="#FF838383"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+    </Application.Resources>
+</Application>

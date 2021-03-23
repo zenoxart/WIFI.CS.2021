@@ -1,0 +1,23 @@
+The Counting Loop
+
+The for loop executes a statement or a block of 
+statements repeatedly until a specified expression evaluates 
+to false. The for loop is handy for iterating over arrays 
+and for sequential processing. In the following example, 
+the value of int i is written to the console and i is 
+incremented each time through the loop by 1.
+
+Example
+
+// for loop
+using System;
+class ForLoopTest 
+{
+    static void Main() 
+    {
+        for (int i = 1; i <= 5; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}

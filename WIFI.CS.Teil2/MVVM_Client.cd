@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="ViewModels">
+    <Position X="0.5" Y="0.5" Height="0.291" Width="6.983" />
+  </Comment>
+  <Comment CommentText="Views">
+    <Position X="13.5" Y="0.5" Height="0.291" Width="1.992" />
+  </Comment>
+  <Comment CommentText="Models">
+    <Position X="8.062" Y="0.5" Height="0.291" Width="4.455" />
+  </Comment>
+  <Class Name="WIFI.CS.Teil2.ViewModels.Anwendung">
+    <Position X="0.5" Y="5.75" Width="2" />
+    <Members>
+      <Field Name="_Aufgaben" Hidden="true" />
+      <Field Name="_FensterSchließen" Hidden="true" />
+      <Field Name="_NeuesFenster" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAIECAAAAAAIAAAAIgAQAAoAAAAIAAAAAAAAARAAAAA=</HashCode>
+      <FileName>ViewModels\Anwendung.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Teil2.App">
+    <Position X="0.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.CS.Teil2.Hauptfenster">
+    <Position X="13.5" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Hauptfenster.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.CS.Teil2.Models.Aufgaben">
+    <Position X="10.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Aufgabe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Teil2.Models.Aufgabe">
+    <Position X="10.5" Y="3.75" Width="2" />
+    <Members>
+      <Field Name="_Name" Hidden="true" />
+      <Field Name="_Symbol" Hidden="true" />
+      <Field Name="_ViewName" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAACAAAAAAIAQAAAAAAAAAAAAAAAACCAA=</HashCode>
+      <FileName>Models\Aufgabe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Teil2.Models.AufgabenXmlController">
+    <Position X="8" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AufgabenXmlController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.CS.Teil2.ViewModels.AufgabenManager">
+    <Position X="3" Y="5.75" Width="2" />
+    <Members>
+      <Field Name="_AktiverViewer" Hidden="true" />
+      <Field Name="_AktuelleAufgabe" Hidden="true" />
+      <Field Name="_Controller" Hidden="true" />
+      <Field Name="_Liste" Hidden="true" />
+      <Field Name="_VorhandeneViewer" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgAEAAAAQkgAEAAQAACAGAAAAAAQAAAAQAAAgAAAAA=</HashCode>
+      <FileName>ViewModels\AufgabenManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WIFI.Anwendung.AppObjekt">
+    <Position X="3" Y="1.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.Anwendung.Daten.DatenBasis">
+    <Position X="10.5" Y="1.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.Anwendung.Generisch.XmlController&lt;T&gt;">
+    <Position X="8" Y="1.25" Width="2" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="WIFI.Anwendung.ViewModelAppObjekt">
+    <Position X="5.5" Y="2" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WIFI.CS.Teil2.ViewModels.TAPManager">
+    <Position X="5.5" Y="5.75" Width="2" />
+    <Members>
+      <Field Name="_Abbrechen" Hidden="true" />
+      <Field Name="_AktuellerStand" Hidden="true" />
+      <Field Name="_ArbeitLäuft" Hidden="true" />
+      <Field Name="_Starten" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ggAhAAAAAAAAgAAAAgABAAAAAAAIAAIAAAAAEAAAQAA=</HashCode>
+      <FileName>ViewModels\TAPManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

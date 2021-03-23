@@ -1,0 +1,117 @@
+﻿<UserControl x:Class="WIFI.CS.Teil2.ProtokollView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WIFI.CS.Teil2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        
+        <!-- Der Protokollviewer soll einen
+        alten grün-crt-bildschirm emulieren
+        -->
+        <Grid.Background>
+            <RadialGradientBrush  Opacity="0.8">
+                <RadialGradientBrush.GradientStops>
+                    <GradientStop Color="Gray" Offset="2"/>
+                    <GradientStop Color="DarkBlue" Offset="0"/>
+                </RadialGradientBrush.GradientStops>
+            </RadialGradientBrush>
+        </Grid.Background>
+        
+        <!-- Im Code Behind wird im ViewModel
+             eine Rückrufmethode hinterlegt,
+             mit der einem neuen Eintrag in der Liste
+             nach unten geblättert wird,
+             damit ein neuer Eintrag automatisch sichtbar wird
+            20210309 Mr. Minehuber, 
+            das Horizontale Content Alignment ergenzt-->
+        <ListBox
+            x:Name="Liste"
+            Foreground="LightBlue"
+            ItemsSource="{Binding AppKontext.Protokoll.Einträge}"
+            Background="Transparent"
+            BorderThickness="0"
+            ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+            
+            HorizontalContentAlignment="Stretch"
+            
+            >
+            <ListBox.ItemTemplate>
+            <!-- Das Layout einer Protokollzeile vorgeben 
+                Außerdem wird abhängig vom Typ des Eintrags
+                eine andere Farbe bzw. Symbol benutzt
+            
+                Es wird mit einem Grid gearbeitet,
+                weil WPF das Gird jedes Mal neu berechnet.
+                Das passiert beim StackPanel nicht.
+                Notwendig, damit mehrzeilige Einträge 
+                möglich werden. -->
+
+                <DataTemplate>
+                    <!-- Hier ist automatisch auf den 
+                    aktuellen Eintrag der Liste gebunden. 
+                    Nicht auf den DataContext!
+                    Der liegt im Viewmodel-->
+                    <Grid x:Name="Zeile">
+                        <Grid.ColumnDefinitions>
+                            <!-- Linke Spalte für das Symbol -->
+                            <ColumnDefinition Width="40"/>
+                            <!-- Rechte Spalte für den Text-->
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Das Symbol für den Eintrag -->
+                        <TextBlock
+                            x:Name="Symbol"
+                            Grid.Column="0"
+                            Foreground="{Binding ElementName=Text, Path=Foreground}"
+                            Text="&#x6C;"
+                            TextWrapping="Wrap"
+                            FontFamily="Wingdings"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Padding="0,2,5,0"
+                            />
+
+                        <!-- Der Text vom Eintrag -->
+                        <TextBlock
+                            x:Name="Text"
+                            Grid.Column="1"
+                            Text="{Binding Text}"
+                            TextWrapping="Wrap"
+                            />
+
+
+                    </Grid>
+                    <!-- Abhängig vom Typ des Eintrags 
+                         andere Darstellungen wählen-->
+                    <DataTemplate.Triggers>
+                        <!-- Neue Instanzeinträge in weiß
+                             mit einem Haken als Symbol -->
+                        <DataTrigger Binding="{Binding Typ}" Value="NeueInstanz">
+                            <Setter TargetName="Text" Property="Foreground" Value="White" />
+                            <Setter TargetName="Symbol" Property="Text" Value="&#xFE;" />
+                        </DataTrigger>
+                        <!-- Neue Warneinträge in Gelb
+                             mit einer Box als Symbol -->
+                        <DataTrigger Binding="{Binding Typ}" Value="Warnung">
+                            <Setter TargetName="Text" Property="Foreground" Value="Yellow"/>
+                            <Setter TargetName="Symbol" Property="Text" Value="&#x6E;"/>
+                        </DataTrigger>
+                        <!-- Neue Fehlerinträge mit Rotem Hintergrund und 
+                             einer gekreutzen Box als Symbol -->
+                        <DataTrigger Binding="{Binding Typ}" Value="Fehler">
+                            <Setter TargetName="Zeile" Property="Background" Value="Red"/>
+                            <Setter TargetName="Zeile" Property="Margin" Value="0 3 0 2"/>
+                            <Setter TargetName="Text" Property="Foreground" Value="Yellow"/>
+                            <Setter TargetName="Symbol" Property="Text" Value="&#xFD;"/>
+                            <Setter TargetName="Symbol" Property="Foreground" Value="Yellow"/>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>
