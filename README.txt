@@ -4,24 +4,24 @@ Erklährungen zur Erweiterung der MVVM-Anwendung mit der REST-Api
 ================================================================
 
 Eine View erstellen:
-Zum erstellen einer View diese in der jeweiligen Assembly
+Diese in der jeweiligen Assembly
 erstellen und erst danach unter die Views refaktorieren
 
-Anwendung um ein Datenbank-Element e
+
+
+----------------------------------------------------------------
+Anwendung um ein Datenbank-Element
 mit MVVM und der Rest-Api:
 
-1. Wir machen die Datenbank
-	ASP.NET
-	Erstelle eine .mdf Datei durch den Server-Explorer
-	Erstelle die benötigten Tabellen
-	Erstelle Prozeduren für die Abfragen der Tabellen um Sicherheit zu gewährleisten
-
-
-
-
-
-2. Wir machen ein Transfer-Daten-Objekt
+1. 1/2 Wir machen die Datenbank:
+	ASP.NET eine .mdf Datei durch den Server-Explorer
+	Benötigten Tabellen und ensprechende Prozedur
 	
+1. 2/2 Wir machen eine REST-API aus der Datenbank
+	Config-Dateien anpassen
+	Einen ApiController hinzufügen
+
+2. Wir machen ein Transfer-Daten-Objekt:
 	Eine Assembly mit dem Gebiet für die SqlController
 	Eine Assembly für die Daten des Gebiets
 
