@@ -91,7 +91,7 @@ namespace WIFI.Lotto.Daten
                 if (value != this._HöchsteZahl)
                 {
                     this._HöchsteZahl = value;
-                    OnPropertyChanged();
+                    this.OnPropertyChanged();
                 }
             }
         }
@@ -116,9 +116,34 @@ namespace WIFI.Lotto.Daten
                 if (value != this._AnzahlZahlen)
                 {
                     this._AnzahlZahlen = value;
-                    OnPropertyChanged();
+                    this.OnPropertyChanged();
                 }
             }
         }
+
+
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private string _Beschreibung = string.Empty;
+
+        /// <summary>
+        /// Ruft die lokalisierte Beschreibung des Lottosystem des Landes ab
+        /// oder legt diese fest
+        /// </summary>
+        [WIFI.Anwendung.Daten.InToString]
+        public string Beschreibung
+        {
+            get { return this._Beschreibung; }
+            set {
+
+                if (value != this._Beschreibung)
+                {
+
+                    this._Beschreibung = value;
+                    this.OnPropertyChanged();
+                } }
+        }
+
     }
 }

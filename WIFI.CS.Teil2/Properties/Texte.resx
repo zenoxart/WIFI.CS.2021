@@ -147,6 +147,9 @@
   <data name="FensterSchließenTipp" xml:space="preserve">
     <value>Closes all windows</value>
   </data>
+  <data name="Landbeschreibung" xml:space="preserve">
+    <value>Country:</value>
+  </data>
   <data name="NeuesFensterTipp" xml:space="preserve">
     <value>Opens a new window (Ctrl + N)</value>
   </data>

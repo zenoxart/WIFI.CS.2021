@@ -13,5 +13,52 @@ namespace WIFI.CS.Teil2.Models
     /// </summary>
     internal class LottoWebController : WIFI.Anwendung.ViewModelAppObjekt,ILottoController
     {
+        /// <summary>
+        /// Gibt die unterstützten Lottoländer zurück
+        /// </summary>
+
+        public async System.Threading.Tasks.Task<WIFI.Lotto.Daten.Länder> HoleLänderAsync()
+        {
+            const string Adresse = "{0}Lotto";
+
+            using (var Antwort = 
+                        await this.HttpClient.GetAsync(
+                                String.Format(
+                                    Adresse, 
+                                    Properties.Settings.Default.UrlGatewayAPI
+                                    )
+                                )
+                   )
+            {
+                var AntwortText = await Antwort.Content.ReadAsStringAsync();
+
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<WIFI.Lotto.Daten.Länder>(AntwortText);
+            }
+        }
+
+
+        /// <summary>
+        /// Gibt die Tage mit einer Ziehung zurück
+        /// </summary>
+
+        public async System.Threading.Tasks.Task<System.DateTime[]> HoleZiehungenAsync(WIFI.Lotto.Daten.Land land)
+        {
+            const string Adresse = "{0}lotto?iso2land={1}";
+
+            using (var Antwort =
+                        await this.HttpClient.GetAsync(
+                                String.Format(
+                                    Adresse,
+                                    Properties.Settings.Default.UrlGatewayAPI,
+                                    land.ISO2
+                                    )
+                                )
+                   )
+            {
+                var AntwortText = await Antwort.Content.ReadAsStringAsync();
+
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<System.DateTime[]>(AntwortText);
+            }
+        }
     }
 }

@@ -62,6 +62,13 @@ namespace WIFI.CS.Teil2.ViewModels
         /// das initialisiert werden soll</param>
         protected virtual void FensterInitialisieren(System.Windows.Window fenster)
         {
+
+            // Weil Xml ein anderes Sprachsystem als .Net benutzt,
+            // den .Net Code in den alten Code übersetzen,
+            // damit z.B. Datumsangaben richtig formatiert werden
+            fenster.Language = System.Windows.Markup.XmlLanguage.GetLanguage(
+                System.Globalization.CultureInfo.CurrentCulture.IetfLanguageTag);
+
             // Weil in MVVM in der Oberfläche kaum
             // etwas benannt ist, einen Namen berechnen
             fenster.Name = fenster.GetType().Name;
@@ -506,6 +513,7 @@ namespace WIFI.CS.Teil2.ViewModels
                 if (this._Lotto == null)
                 {
                     this._Lotto = this.AppKontext.Produziere<ViewModels.LottoManager>();
+                    this._Lotto.IstBeschäftigtSynchronisieren(mitViewModel: this);
                 }
                 return this._Lotto;
             }

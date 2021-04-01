@@ -54,15 +54,16 @@ namespace WIFI.Lotto
                     {
                         while (DatenLeser.Read())
                         {
-                            
                             Länder.Add(
                                 new WIFI.Lotto.Daten.Land
                                 {
                                     ISO2 = DatenLeser["Kurzbezeichnung"].ToString(),
                                     Name = DatenLeser["Übersetzung 1"].ToString(),
                                     AnzahlZahlen = Convert.ToInt32(DatenLeser["Zahlenanzahl"]),
-                                    HöchsteZahl = Convert.ToInt32(DatenLeser["Höchstanzahl"])
-                                });
+                                    HöchsteZahl = Convert.ToInt32(DatenLeser["Höchstanzahl"]),
+                                    // Ergänzt die Beschreibung von der Datenbank beim Laden
+                                    Beschreibung = DatenLeser["Beschreibung"].ToString()
+                                }) ;
                         }
                     }
                 }
@@ -72,6 +73,42 @@ namespace WIFI.Lotto
 
             this.EndeProtokollieren();
             return Länder;
+        }
+
+        /// <summary>
+        /// Gibt die Tage mit Ziehung eines Landes zurück
+        /// </summary>
+        /// <param name="land">Der ISO2 Code des Landes</param>
+        /// <returns>Ein Array mit den Tagen einer Ziehung</returns>
+        public System.DateTime[] HoleZiehungen(string land)
+        {
+            this.StartProtokollieren();
+            var Tage = new System.Collections.Generic.List<System.DateTime>();
+
+            using (var Verbindung = new System.Data.SqlClient.SqlConnection(this.ConnectionString))
+            {
+                using (var Befehl = new System.Data.SqlClient.SqlCommand("HoleZiehungen",Verbindung))
+                {
+                    Befehl.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    Befehl.Parameters.AddWithValue("@land", land);
+
+                    Befehl.Prepare();
+
+                    Verbindung.Open();
+
+                    using (var Leser = Befehl.ExecuteReader(System.Data.CommandBehavior.CloseConnection))
+                    {
+                        while (Leser.Read())
+                        {
+                            Tage.Add((DateTime)Leser["Datum"]);
+                        }
+                    }
+                }
+            }
+
+                this.EndeProtokollieren();
+            return Tage.ToArray();
         }
     }
 }

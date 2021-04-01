@@ -9,7 +9,32 @@
              d:DesignWidth="800"
              DataContext="{Binding Lotto}">
     <Grid>
-        <Label Content="BETA Lotto-Ziehung" 
-               Style="{DynamicResource HellDunkelDesign}"/>   
+        <Grid.RowDefinitions>
+            <!-- Zum Auswählen vom Land -->
+            <RowDefinition Height="40"/>
+            
+            <!-- Zum Auswählen vom Datum -->
+            <RowDefinition Height="40"/>
+            
+            <!-- Zum Anzeigen der Zahlen -->
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <local:LottoLandView/>
+        <StackPanel
+            Grid.Row="1"
+            Orientation="Horizontal"
+            VerticalAlignment="Center"
+            >
+
+            <ComboBox 
+                Width="100"
+                
+                ItemsSource="{Binding Ziehungen}"
+                
+                />
+
+        </StackPanel>
     </Grid>
 </UserControl>

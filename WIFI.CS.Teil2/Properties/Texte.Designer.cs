@@ -151,6 +151,15 @@ namespace WIFI.CS.Teil2.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Country: ähnelt.
+        /// </summary>
+        public static string Landbeschreibung {
+            get {
+                return ResourceManager.GetString("Landbeschreibung", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Opens a new window (Ctrl + N) ähnelt.
         /// </summary>
         public static string NeuesFensterTipp {

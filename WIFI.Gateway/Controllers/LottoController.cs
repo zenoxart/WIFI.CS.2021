@@ -71,11 +71,16 @@ namespace WIFI.Gateway.Controllers
                 this.Request.Headers.AcceptLanguage.ToString()
                 );
         }
-
-        // GET api/<controller>/5
-        public string Get(int id)
+        
+        /// <summary>
+        /// GIbt die Tage mit einer Ziehung zurück
+        /// </summary>
+        /// <param name="iso2Land">Der ISO2 Code des Landes,
+        /// von dem die tage mit einer Ziehung benötigt werden</param>
+        /// <returns>Ein Array mit den Tagen einer Ziehung</returns>
+        public System.DateTime[] Get(string iso2Land)
         {
-            return "value";
+            return this.Controller.HoleZiehungen(iso2Land);
         }
 
         // POST api/<controller>

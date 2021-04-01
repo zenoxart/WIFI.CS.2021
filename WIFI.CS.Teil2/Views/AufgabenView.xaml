@@ -45,14 +45,13 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Cursor="Hand">
                         <TextBlock 
-                               FontSize="15"
+                                FontSize="15"
                             
                                 FontFamily="Wingdings"
-                               Text="{Binding Symbol}" 
+                                Text="{Binding Symbol}" 
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
-                                
-                               Width="30" 
+                                Width="30" 
                                />
                         <TextBlock Text="{Binding Name}"
                                    TextAlignment="Center"/>
