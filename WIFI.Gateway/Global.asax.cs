@@ -33,6 +33,7 @@ namespace WIFI.Gateway
 
 
             Infrastruktur.DatenbankPfad = System.Web.Configuration.WebConfigurationManager.AppSettings["DatenbankPfad"];
+            Infrastruktur.Protokoll.Pfad = System.Web.Configuration.WebConfigurationManager.AppSettings["Protokollpfad"];
             
             // Wir mache aus dem Relativen Pfad (~/app_data) den vollständigen (z.B.: https://localhost/8080/app_data) und setzen es auf die selbe Variable
             Infrastruktur.DatenbankPfad = this.Server.MapPath(Infrastruktur.DatenbankPfad);

@@ -73,6 +73,9 @@ namespace WIFI.CS.Teil2
             System.Globalization.CultureInfo.CurrentUICulture
                 = new System.Globalization.CultureInfo(AppKontext.Sprachen.Aktuell.Code);
 
+            //System.Globalization.CultureInfo.CurrentUICulture.NumberFormat = new System.Globalization.NumberFormatInfo();
+            //System.Globalization.CultureInfo.CurrentUICulture.DateTimeFormat.FullDateTimePattern = DateTime.Now.GetDateTimeFormats("");
+
             // Den Cache vom Sprachen-Manager neu initialisieren
             AppKontext.Sprachen.Aktualisieren();
             // Weil "Aktualisieren" die Aktuelle Sprache  

@@ -13,7 +13,8 @@
              (Bei uns im Main)
         -->
         <SolidColorBrush x:Key="SchriftfarbeDunklesDesign" Color="White"/>
-        
+
+
         <!-- Stil für einen Anwendungsbutton mit Font-Icons -->
         <Style 
             x:Key="AppSymbol"

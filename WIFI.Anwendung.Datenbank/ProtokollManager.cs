@@ -104,6 +104,37 @@ namespace WIFI.Anwendung
 
                 this.Einträge.Add(eintrag);
 
+                // Wenn der Pfad gesetzt ist und auch existiert
+                if (this.Pfad != string.Empty)
+                {
+
+                    if (!System.IO.File.Exists(this.Pfad))
+                    {
+                        System.IO.File.Create(this.Pfad);
+                    }
+
+                    try
+                    {
+                        // Schreibe die Zeile in die Datei
+                        using (System.IO.StreamWriter reader = new System.IO.StreamWriter(this.Pfad))
+                        {
+                            reader.WriteLine(eintrag);
+                        }
+                    }
+                    catch (Exception r)
+                    {
+                        this.Einträge.Add(new Daten.ProtokollEintrag
+                        {
+                            Text = 
+                            $"Beim schreiben in die Datei '{this.Pfad}' ist ein Fehler aufgetaucht.\n\r" +
+                            $"{r.GetType().FullName}:\n\r {r.Message}",
+                            Typ=Daten.ProtokollEintragTyp.Fehler
+                            
+                        });
+                    }
+                    
+                }
+
                 // Falls ein Fehler eingetragen wurde,
                 // EnthältFehler einschalten
                 if (eintrag.Typ == Daten.ProtokollEintragTyp.Fehler)
@@ -387,13 +418,14 @@ namespace WIFI.Anwendung
 
                     this.KomrpimierenAsync();
 
-                    
+
                 }
-                catch (Exception ex) {  
+                catch (Exception ex)
+                {
                     Eintragen(
                         $"Beim komprimieren der Einträge im {this.GetType().FullName} ist ein Fehler aufgetreten." +
-                        $" Message= {ex.Message}", 
-                        Daten.ProtokollEintragTyp.Fehler); 
+                        $" Message= {ex.Message}",
+                        Daten.ProtokollEintragTyp.Fehler);
                 }
             }
         }
@@ -491,6 +523,28 @@ namespace WIFI.Anwendung
                 {
                     StarteZähler();
                 }
+            }
+        }
+
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private string _Pfad = string.Empty;
+
+        /// <summary>
+        /// Ruft den Pfad für die APS.NET Konfiguration ab,
+        /// oder legt diese fest
+        /// </summary>
+        public string Pfad
+        {
+            get
+            {
+                return this._Pfad;
+            }
+            set
+            {
+                this._Pfad = value;
+
             }
         }
 

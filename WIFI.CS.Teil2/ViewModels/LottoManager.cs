@@ -161,7 +161,12 @@ namespace WIFI.CS.Teil2.ViewModels
 
                 //this.EndeProtokollieren();
             
+            
         }
+
+       
+
+
 
     }
 }

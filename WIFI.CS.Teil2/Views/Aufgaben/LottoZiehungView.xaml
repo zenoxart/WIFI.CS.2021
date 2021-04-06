@@ -27,9 +27,10 @@
             Orientation="Horizontal"
             VerticalAlignment="Center"
             >
-
-            <ComboBox 
-                Width="100"
+            <Label 
+                Width="100"/>
+            <ComboBox  
+                Width="150"
                 
                 ItemsSource="{Binding Ziehungen}"
                 

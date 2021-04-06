@@ -92,7 +92,7 @@
             
             Orientation="Horizontal"
             VerticalAlignment="Bottom"
-            
+            Margin="1"
             >
 
             <!-- Beschäftigt LED -->
