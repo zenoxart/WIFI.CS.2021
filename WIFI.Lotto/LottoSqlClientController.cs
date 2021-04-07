@@ -61,7 +61,7 @@ namespace WIFI.Lotto
                                     Name = DatenLeser["Übersetzung 1"].ToString(),
                                     AnzahlZahlen = Convert.ToInt32(DatenLeser["Zahlenanzahl"]),
                                     HöchsteZahl = Convert.ToInt32(DatenLeser["Höchstanzahl"]),
-                                    // Ergänzt die Beschreibung von der Datenbank beim Laden
+                                    // Ergänzung der Beschreibung von der Datenbank beim Laden
                                     Beschreibung = DatenLeser["Beschreibung"].ToString()
                                 }) ;
                         }

@@ -106,6 +106,15 @@ namespace WIFI.CS.Teil2.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Date: ähnelt.
+        /// </summary>
+        public static string Datum {
+            get {
+                return ResourceManager.GetString("Datum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Settings ähnelt.
         /// </summary>
         public static string EinstellungsFensterName {

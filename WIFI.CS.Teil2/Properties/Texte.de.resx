@@ -132,6 +132,9 @@
   <data name="DatenHolen" xml:space="preserve">
     <value>Daten abrufen...</value>
   </data>
+  <data name="Datum" xml:space="preserve">
+    <value>Datum:</value>
+  </data>
   <data name="EinstellungsFensterName" xml:space="preserve">
     <value>Einstellungen</value>
   </data>

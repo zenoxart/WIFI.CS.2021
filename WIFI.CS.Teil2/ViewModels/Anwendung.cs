@@ -434,6 +434,12 @@ namespace WIFI.CS.Teil2.ViewModels
         /// ob die Anwendung das dunkle Design 
         /// benutzen soll oder nicht
         /// </summary>
+        /// 20210406
+        /// Weil dieses ViewModel nicht immer im DataContext ist,
+        /// wurde mittlerweile dem LottoManager, d.h. der Eigenschaft Lotto,
+        /// ebenfalls DunklesDesign beigebracht. Sollte ein LottoManager
+        /// bereits existieren, eine Änderung der Einstellung
+        /// an den LottoManager weitergeben
         public bool DunklesDesign
         {
             get
@@ -443,14 +449,24 @@ namespace WIFI.CS.Teil2.ViewModels
 
             set
             {
-                if (value != Properties.Settings.Default.DunklesDesign)
-                {
+                // Falls die Binärentscheidung vorhanden ist,
+                // wird nur im aktuellen Fenster die Einstellung 
+                // an die Lotto View weitergegeben. Damit die Änderung
+                // in allen offenen Fenstern zieht, ohne dieser Entscheidung
+                //if (value != Properties.Settings.Default.DunklesDesign)
+                
                     Properties.Settings.Default.DunklesDesign = value;
 
                     // Es wird davon ausgegangen, dass die 
                     // Einstellung im Main() gespeichert wird
 
-                }
+                    // 20210406 Die Einstellung auch an das Viewmodel Lotto weitergeben
+                    // Wenn dieses existiert
+                    if (this._Lotto != null)
+                    {
+                        this._Lotto.DunklesDesign = value;
+                    }
+                
                 // Weil die Anwendung mehere Fenster haben kann,
                 // egal ob der Wert geändert wurde oder nicht...
                 this.OnPropertyChanged();

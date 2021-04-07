@@ -143,6 +143,8 @@ namespace WIFI.CS.Teil2.ViewModels
                 this._Ziehungen = value;
                 this.OnPropertyChanged();
 
+                // Damit ist der TagDerZiehung ungültig
+                this.TagDerZiehung = null;
             }
         }
 
@@ -159,13 +161,70 @@ namespace WIFI.CS.Teil2.ViewModels
 
                 this.Ziehungen = await this.Controller.HoleZiehungenAsync(this.AktuellesLand);
 
+
+            if (this.Ziehungen.Length > 0)
+            {
+                this.TagDerZiehung = this.Ziehungen[0];
+            }
                 //this.EndeProtokollieren();
             
             
         }
 
-       
+        /// <summary>
+        /// Ruft einen Wahrheitswert ab, oder legt fest
+        /// ob die Anwendung das dunkle Design 
+        /// benutzen soll oder nicht
+        /// </summary>
+        /// 20210406 
+        /// Weil die View auf DataKontext gebunden ist
+        /// und Anwendung.DunklesDesign nicht sieht,
+        /// diese Eigenschaft auch hier
+        public bool DunklesDesign
+        {
+            get
+            {
+                return Properties.Settings.Default.DunklesDesign;
+            }
 
+            set
+            {
+                if (value != Properties.Settings.Default.DunklesDesign)
+                {
+                    Properties.Settings.Default.DunklesDesign = value;
+
+                    // Es wird davon ausgegangen, dass die 
+                    // Einstellung im Main() gespeichert wird
+
+                }
+                // Weil die Anwendung mehere Fenster haben kann,
+                // egal ob der Wert geändert wurde oder nicht...
+                this.OnPropertyChanged();
+            }
+        }
+
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private System.DateTime? _TagDerZiehung;
+
+        /// <summary>
+        /// Ruft das Datum der Ziehung ab, von dem 
+        /// die Zahlen benötigt werden, 
+        /// oder legt diese fest
+        /// </summary>
+        public System.DateTime? TagDerZiehung
+        {
+            get { return this._TagDerZiehung; }
+            set {
+
+                if (this._TagDerZiehung != value)
+                {
+                    this._TagDerZiehung = value;
+                    this.OnPropertyChanged();
+                }
+                 }
+        }
 
 
     }

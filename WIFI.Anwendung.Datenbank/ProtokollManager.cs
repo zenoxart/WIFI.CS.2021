@@ -102,38 +102,42 @@ namespace WIFI.Anwendung
             void Eintragen()
             {
 
+                this.EintragSpeichern(eintrag);
+
                 this.Einträge.Add(eintrag);
 
+                // 20210406
+                // Funktioniert so nicht, weil wir nicht über eine Assembly übergreifend Dateien mit einem IO.StreamWriter schreiben können
                 // Wenn der Pfad gesetzt ist und auch existiert
-                if (this.Pfad != string.Empty)
-                {
+                //if (this.Pfad != string.Empty)
+                //{
 
-                    if (!System.IO.File.Exists(this.Pfad))
-                    {
-                        System.IO.File.Create(this.Pfad);
-                    }
+                //    if (!System.IO.File.Exists(this.Pfad))
+                //    {
+                //        System.IO.File.Create(this.Pfad);
+                //    }
 
-                    try
-                    {
-                        // Schreibe die Zeile in die Datei
-                        using (System.IO.StreamWriter reader = new System.IO.StreamWriter(this.Pfad))
-                        {
-                            reader.WriteLine(eintrag);
-                        }
-                    }
-                    catch (Exception r)
-                    {
-                        this.Einträge.Add(new Daten.ProtokollEintrag
-                        {
-                            Text = 
-                            $"Beim schreiben in die Datei '{this.Pfad}' ist ein Fehler aufgetaucht.\n\r" +
-                            $"{r.GetType().FullName}:\n\r {r.Message}",
-                            Typ=Daten.ProtokollEintragTyp.Fehler
+                //    try
+                //    {
+                //        // Schreibe die Zeile in die Datei
+                //        using (System.IO.StreamWriter reader = new System.IO.StreamWriter(this.Pfad))
+                //        {
+                //            reader.WriteLine(eintrag);
+                //        }
+                //    }
+                //    catch (Exception r)
+                //    {
+                //        this.Einträge.Add(new Daten.ProtokollEintrag
+                //        {
+                //            Text = 
+                //            $"Beim schreiben in die Datei '{this.Pfad}' ist ein Fehler aufgetaucht.\n\r" +
+                //            $"{r.GetType().FullName}:\n\r {r.Message}",
+                //            Typ=Daten.ProtokollEintragTyp.Fehler
                             
-                        });
-                    }
+                //        });
+                //    }
                     
-                }
+                //}
 
                 // Falls ein Fehler eingetragen wurde,
                 // EnthältFehler einschalten
@@ -535,6 +539,7 @@ namespace WIFI.Anwendung
         /// Ruft den Pfad für die APS.NET Konfiguration ab,
         /// oder legt diese fest
         /// </summary>
+        /// <remarks> Wird die Eigenschaft leer gelassen, wird kein Protokoll geschrieben</remarks>
         public string Pfad
         {
             get
@@ -543,12 +548,77 @@ namespace WIFI.Anwendung
             }
             set
             {
+
                 this._Pfad = value;
 
+                if (this._Pfad != string.Empty)
+                {
+                    this.Eintragen($"Protokolleinträge werden unter \"{this._Pfad}\" hinterlegt.");
+                }
             }
         }
 
+        /// <summary>
+        /// Speichert die Daten des Protokolleintrags
+        /// in der im Pfad angegebenen Datei
+        /// </summary>
+        /// <param name="eintrag">der in die .Log-Datei zu speichernde 
+        /// Protokolleintrag</param>
+        /// <remarks>Sollte beim Schreiben ein Fehler auftreten, 
+        /// wird gewartet und wieder probiert und max. 10 mal wieder probiert,
+        /// sollte das Problem nicht lösen, wird der Pfad entfernt 
+        /// und damit das Speichern automatisch deaktiviert
+        /// Fehler können auftreten, wenn meherere Zugriffe gleichzeitig sind und die Datei gesperrt ist</remarks>
 
+        protected virtual void EintragSpeichern(Daten.ProtokollEintrag eintrag)
+        {
+            if (!string.IsNullOrEmpty(this.Pfad))
+            {
+                int Versuche = 10;
+                do
+                {
+
+                    try
+                    {
+                        using (var Schreiber = new System.IO.StreamWriter(
+                            this.Pfad,
+                            append: true,
+                            System.Text.Encoding.Default))
+                        {
+
+                            const string Ausgabemuster = "{0}\t{1}\t{2}";
+
+                            Schreiber.WriteLine(
+                                string.Format(
+                                    Ausgabemuster,
+                                    eintrag.Zeitstempel.ToString(), // {0}
+                                    eintrag.Typ.ToString(), // {1}
+                                    eintrag.Text.Replace("\t"," ") // keine Tabulatoren in den Daten
+                                                .Replace("\r"," ") // keine Eingabetaste in den Daten
+                                                .Replace("\n"," ") // keinen Zeilenvorschub
+                                    ));
+                        }
+
+                        // Alles durchgelaufen
+                        Versuche = 0;
+                    }
+                    catch (System.IO.IOException ioex)
+                    {
+                        // Es kann sein, das die Datei
+                        // aktuell von einem anderen Thread
+                        // gesperrt ist
+
+                        System.Threading.Thread.Sleep(100);
+                        Versuche--;
+                    }
+                    catch (System.Exception ex)
+                    {
+                        this.Pfad = string.Empty;
+                        Versuche = 0;
+                    }
+                } while (Versuche > 0);
+            }
+        }
 
     }
 }

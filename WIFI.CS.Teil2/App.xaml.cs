@@ -73,6 +73,19 @@ namespace WIFI.CS.Teil2
             System.Globalization.CultureInfo.CurrentUICulture
                 = new System.Globalization.CultureInfo(AppKontext.Sprachen.Aktuell.Code);
 
+            // Sollte die Zahlenformatierung nicht vom Betriebsystem
+            // gesteuert werden, die Kultur der Oberfläche auch für die
+            // Zahlenformatierung benutzen
+            if (!WIFI.CS.Teil2.Properties.Settings.Default.ZahlenformatVonOS)
+            {
+                System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.CurrentUICulture;
+                
+                AppKontext.Protokoll.Eintragen(
+                    "Die Zahlenformatierung wird von der Anwendung gesteuert", 
+                    Anwendung.Daten.ProtokollEintragTyp.Warnung);
+            }
+
+
             //System.Globalization.CultureInfo.CurrentUICulture.NumberFormat = new System.Globalization.NumberFormatInfo();
             //System.Globalization.CultureInfo.CurrentUICulture.DateTimeFormat.FullDateTimePattern = DateTime.Now.GetDateTimeFormats("");
 

@@ -25,6 +25,15 @@ namespace WIFI.Gateway
             // Firmenframework-AppKontext hochfahren
             var Infrastruktur = new WIFI.Anwendung.DatenbankAppKontext();
 
+
+            Infrastruktur.Protokoll.Pfad = System.Web.Configuration.WebConfigurationManager.AppSettings["Protokollpfad"];
+
+            if (Infrastruktur.Protokoll.Pfad != string.Empty)
+            {
+                // MapPath löst den Pfad mit ~ zum Physischen auf
+                Infrastruktur.Protokoll.Pfad = this.Server.MapPath(Infrastruktur.Protokoll.Pfad);
+            }
+
             // Die Einstellngen aus der Web.Config übernehmen
             // Das AppSettings ist eine NamedValueCollection (ähnlich wie ein Hashtable oder ein Dictionary)
             Infrastruktur.SqlServer = System.Web.Configuration.WebConfigurationManager.AppSettings["SqlServer"];
@@ -33,7 +42,6 @@ namespace WIFI.Gateway
 
 
             Infrastruktur.DatenbankPfad = System.Web.Configuration.WebConfigurationManager.AppSettings["DatenbankPfad"];
-            Infrastruktur.Protokoll.Pfad = System.Web.Configuration.WebConfigurationManager.AppSettings["Protokollpfad"];
             
             // Wir mache aus dem Relativen Pfad (~/app_data) den vollständigen (z.B.: https://localhost/8080/app_data) und setzen es auf die selbe Variable
             Infrastruktur.DatenbankPfad = this.Server.MapPath(Infrastruktur.DatenbankPfad);

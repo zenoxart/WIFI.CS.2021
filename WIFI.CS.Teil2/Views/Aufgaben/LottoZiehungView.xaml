@@ -7,6 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" 
              d:DesignWidth="800"
+             xmlns:p="clr-namespace:WIFI.CS.Teil2.Properties"
              DataContext="{Binding Lotto}">
     <Grid>
         <Grid.RowDefinitions>
@@ -28,11 +29,14 @@
             VerticalAlignment="Center"
             >
             <Label 
-                Width="100"/>
+                Width="100"
+                Content="{x:Static p:Texte.Datum}"
+                Style="{DynamicResource HellDunkelDesign}"/>
             <ComboBox  
                 Width="150"
                 
                 ItemsSource="{Binding Ziehungen}"
+                SelectedItem="{Binding TagDerZiehung}"
                 
                 />
 

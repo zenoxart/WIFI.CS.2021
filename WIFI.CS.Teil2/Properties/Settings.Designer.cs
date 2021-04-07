@@ -85,5 +85,17 @@ namespace WIFI.CS.Teil2.Properties {
                 return ((bool)(this["ProtokollKomprimieren"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ZahlenformatVonOS {
+            get {
+                return ((bool)(this["ZahlenformatVonOS"]));
+            }
+            set {
+                this["ZahlenformatVonOS"] = value;
+            }
+        }
     }
 }

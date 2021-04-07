@@ -10,17 +10,6 @@
              d:DesignHeight="450" d:DesignWidth="800"
              
              Height="40">
-    <UserControl.Resources>
-        <SolidColorBrush x:Key="SchriftfarbeDunklesDesign" Color="White"/>
-
-        <Style x:Key="HellDunkelDesign" TargetType="Control">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding DunklerModus}" Value="True">
-                    <Setter Property="Foreground" Value="{StaticResource SchriftfarbeDunklesDesign}"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-    </UserControl.Resources>
     <Grid>
         <StackPanel Orientation="Horizontal"
             VerticalAlignment="Center">
@@ -33,7 +22,8 @@
                 Width="150"
                 ItemsSource="{Binding Länder}"
                 SelectedItem="{Binding AktuellesLand}"
-                DisplayMemberPath="Name"/>
+                DisplayMemberPath="Name"
+                VerticalContentAlignment="Center"/>
             
             <!-- Soll laut Kursleiter in der Datenbank bereitgestellt werden und,
             wäre mit einer Property, welche den Satz abfrägt aber besser gelöst :D-->

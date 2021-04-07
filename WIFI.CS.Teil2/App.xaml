@@ -67,6 +67,8 @@
             </Style.Triggers>
         </Style>
 
+        
+
 
         <SolidColorBrush Color="#bb86fb" x:Key="PurpeBtnFarbe"/>
         <SolidColorBrush Color="Orange" x:Key="OrangeBtnFarbe"/>
