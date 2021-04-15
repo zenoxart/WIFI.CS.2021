@@ -7,12 +7,12 @@ using System.Windows;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("WIFI Client / Server Anwendung")]
-[assembly: AssemblyDescription("Demonstriert wie eine verteilte Client / Server Anwendung erstellt wird")]
+[assembly: AssemblyTitle("CAT Client-Anwendung")]
+[assembly: AssemblyDescription("Client zur Darstellung der KMV")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("WIFI OÖ GmbH")]
-[assembly: AssemblyProduct("3881 C# Komplettausbildung")]
-[assembly: AssemblyCopyright("Copyright © 2020 - 2021")]
+[assembly: AssemblyCompany("Voestalpine GmbH")]
+[assembly: AssemblyProduct("CAT-Ablöse")]
+[assembly: AssemblyCopyright("Copyright © 2021 - 2031")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

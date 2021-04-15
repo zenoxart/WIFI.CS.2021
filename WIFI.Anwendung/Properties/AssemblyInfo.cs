@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
-[assembly: AssemblyTitle("WIFI Anwendung")]
-[assembly: AssemblyDescription("Stellt das Firmenframework einer WIFI Anwendung bereit")]
+[assembly: AssemblyTitle("CAT Kern-Anwendung")]
+[assembly: AssemblyDescription("Stellt das Basisframework einer Anwendung bereit")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("WIFI OÖ GmbH (falsch)")]
-[assembly: AssemblyProduct("3881 C# Komplettausbildung")]
-[assembly: AssemblyCopyright("Copyright © 2020")]
+[assembly: AssemblyCompany("Voestalpine GmbH")]
+[assembly: AssemblyProduct("CAT-Ablöse")]
+[assembly: AssemblyCopyright("Copyright © 2021 - 2031")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -124,7 +124,7 @@
     <value>Closes all windows but this</value>
   </data>
   <data name="AppTitel" xml:space="preserve">
-    <value>WIFI Client / Server Application</value>
+    <value>CAT Client Application</value>
   </data>
   <data name="Beschäftigt" xml:space="preserve">
     <value>Busy</value>

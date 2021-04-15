@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <aufgaben>
 	<aufgabe name="Anwendungsprotokoll" symbol="3" view="WIFI.CS.Teil2.ProtokollView" />
-	<aufgabe name="Lotto-Ziehung" symbol="$" view="WIFI.CS.Teil2.LottoZiehungView" />
-	<aufgabe name="Lotto-Quicktipp" symbol="@" view="WIFI.CS.Teil2.LottoScheinView" />
   <aufgabe name="TAP Beispiel" symbol="z" view="WIFI.CS.Teil2.TAPView"/>
 </aufgaben>

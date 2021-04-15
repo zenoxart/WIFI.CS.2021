@@ -79,7 +79,7 @@ namespace WIFI.CS.Teil2.Properties {
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Zeichenfolge, die WIFI Client / Server Application ähnelt.
+        ///   Sucht eine lokalisierte Zeichenfolge, die CAT Client Application ähnelt.
         /// </summary>
         public static string AppTitel {
             get {

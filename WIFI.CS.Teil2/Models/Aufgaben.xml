@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <aufgaben>
 	<aufgabe name="Application Log" symbol="3" view="WIFI.CS.Teil2.ProtokollView" />
-	<aufgabe name="Lottery Draw" symbol="$" view="WIFI.CS.Teil2.LottoZiehungView" />
-	<aufgabe name="Lottery Ticket" symbol="@" view="WIFI.CS.Teil2.LottoScheinView" />
   <aufgabe name="TAP Example" symbol="z" view="WIFI.CS.Teil2.TAPView"/>
 </aufgaben>

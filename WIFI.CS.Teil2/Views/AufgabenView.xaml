@@ -15,7 +15,7 @@
              den Anwendungspunkten und rechts
              die zur aktuellen Aufgabe passende View -->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200" MinWidth="160"/>
+            <ColumnDefinition Width="200" MinWidth="160" MaxWidth="250"/>
             <ColumnDefinition Width="5"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>

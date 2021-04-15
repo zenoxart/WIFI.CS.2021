@@ -462,10 +462,10 @@ namespace WIFI.CS.Teil2.ViewModels
 
                     // 20210406 Die Einstellung auch an das Viewmodel Lotto weitergeben
                     // Wenn dieses existiert
-                    if (this._Lotto != null)
-                    {
-                        this._Lotto.DunklesDesign = value;
-                    }
+                    //if (this._Lotto != null)
+                    //{
+                    //    this._Lotto.DunklesDesign = value;
+                    //}
                 
                 // Weil die Anwendung mehere Fenster haben kann,
                 // egal ob der Wert geändert wurde oder nicht...
@@ -514,26 +514,6 @@ namespace WIFI.CS.Teil2.ViewModels
             }
         }
 
-        /// <summary>
-        /// Internes Feld für die Eigenschaft
-        /// </summary>
-        private LottoManager _Lotto = null;
-
-        /// <summary>
-        /// Ruft den Dienst zum Verwalten der Lottodaten ab
-        /// </summary>
-        public LottoManager Lotto
-        {
-            get
-            {
-                if (this._Lotto == null)
-                {
-                    this._Lotto = this.AppKontext.Produziere<ViewModels.LottoManager>();
-                    this._Lotto.IstBeschäftigtSynchronisieren(mitViewModel: this);
-                }
-                return this._Lotto;
-            }
-        }
 
     }
 }

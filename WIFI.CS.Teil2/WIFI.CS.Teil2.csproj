@@ -67,10 +67,6 @@
     <Compile Include="Views\Aufgaben\Elemente\LottoLandView.xaml.cs">
       <DependentUpon>LottoLandView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\ILottoController.cs" />
-    <Compile Include="Models\LottoOfflineController.cs" />
-    <Compile Include="Models\LottoWebController.cs" />
-    <Compile Include="ViewModels\LottoManager.cs" />
     <Compile Include="Views\Einstellungsfenster.xaml.cs">
       <DependentUpon>Einstellungsfenster.xaml</DependentUpon>
     </Compile>
@@ -228,6 +224,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Bilder\Sonne.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bilder\ZahnradDunkel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bilder\ZahnradHell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

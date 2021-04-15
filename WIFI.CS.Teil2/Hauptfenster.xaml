@@ -136,14 +136,41 @@
                 </Button.Style>
             </Button>
 
-            <Button Style="{DynamicResource AppSymbol}"
-                    Content="@"
-                    FontFamily="Webdings"
+            <Button 
                     ToolTip="{x:Static p:Texte.EinstellungsFensterTipp}"
                     Command="{Binding Einstellungen}"
                     Template="{DynamicResource AppSymbolCanExecute}"
-                    >
+                >
+                <Button.Style>
+                    <Style BasedOn="{StaticResource AppSymbol}"
+                               TargetType="Button">
+                        <Style.Triggers>
+                            <!-- Falls das Dunkle Design eingeschaltet ist,
+                                     mit der Sonne ausschalten -->
+                            <DataTrigger Binding="{Binding DunklesDesign}" Value="True">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="/Bilder/ZahnradDunkel.png" 
+                                                   Style="{DynamicResource DynamicBtnIcon}"
+                                                   ToolTip="{x:Static p:Texte.ThemenWechselDark}"/>
+                                    </Setter.Value>
 
+                                </Setter>
+                            </DataTrigger>
+                            <!-- Falls das Dunkle Design ausgeschaltet ist,
+                                     mit dem Mond einschalten -->
+                            <DataTrigger Binding="{Binding DunklesDesign}" Value="False">
+                                <Setter Property="Content">
+                                    <Setter.Value>
+                                        <Image Source="/Bilder/ZahnradHell.png" 
+                                                   Style="{DynamicResource DynamicBtnIcon}"
+                                                   ToolTip="{x:Static p:Texte.ThemenWechselHell}"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
             </Button>
 
             <!-- Beschriftung der Sprachenliste 
