@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WIFI.CS.Teil2.ViewModels
 {
@@ -143,7 +139,7 @@ namespace WIFI.CS.Teil2.ViewModels
         /// </summary>
         private string SchlüsselAktuelleAufgabe => this.GetType().FullName + ".AktuelleAufgabe";
 
-        
+
 
         /// <summary>
         /// Ruft den aktuellen Anwendungspunkt ab, oder legt diesen fest
@@ -270,7 +266,7 @@ namespace WIFI.CS.Teil2.ViewModels
             if (this.AktuelleAufgabe != null &&
                 this.AktuelleAufgabe.Name != Properties.Texte.DatenHolen)
             {
-                
+
 
                 this.StartProtokollieren();
 
@@ -345,7 +341,9 @@ namespace WIFI.CS.Teil2.ViewModels
         public bool DunklesDesign
         {
             get { return Properties.Settings.Default.DunklesDesign; }
-            set { Properties.Settings.Default.DunklesDesign = value;
+            set
+            {
+                Properties.Settings.Default.DunklesDesign = value;
                 OnPropertyChanged();
             }
         }

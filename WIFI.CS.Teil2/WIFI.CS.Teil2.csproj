@@ -61,6 +61,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Aufgaben\Elemente\Benutzergrid.xaml.cs">
+      <DependentUpon>Benutzergrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Aufgaben\BenutzersucheView.xaml.cs">
+      <DependentUpon>BenutzersucheView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Einstellungen\SpracheinstellungView.xaml.cs">
       <DependentUpon>SpracheinstellungView.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Aufgaben\Elemente\Benutzergrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Aufgaben\BenutzersucheView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Einstellungen\SpracheinstellungView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

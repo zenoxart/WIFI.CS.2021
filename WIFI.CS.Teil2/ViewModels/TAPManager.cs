@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WIFI.CS.Teil2.ViewModels
+﻿namespace WIFI.CS.Teil2.ViewModels
 {
     /// <summary>
     /// Stellt einen Dienst zum Probieren
@@ -86,7 +80,7 @@ namespace WIFI.CS.Teil2.ViewModels
                         canExecuteMethode: p => this.ArbeitLäuft
                         );
 
-                    
+
                 }
 
                 return this._Abbrechen;
@@ -165,8 +159,8 @@ namespace WIFI.CS.Teil2.ViewModels
                      }
 
                      this.EndeProtokollieren();
-                   
-                     
+
+
                  },
                  cancellationToken: this.AbbruchToken.Token
              );
@@ -179,7 +173,7 @@ namespace WIFI.CS.Teil2.ViewModels
             // der Task fertig ist, muuss beim Task
             // "await" benutzt werden
             this.ArbeitLäuft = false;
-            System.Windows.Input.CommandManager.InvalidateRequerySuggested(); 
+            System.Windows.Input.CommandManager.InvalidateRequerySuggested();
         }
 
     }

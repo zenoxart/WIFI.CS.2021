@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WIFI.CS.Teil2.ViewModels
 {
@@ -113,7 +109,7 @@ namespace WIFI.CS.Teil2.ViewModels
 
                     this.StartProtokollieren();
 
-                    
+
                     this.EinstellungenListe = this.Controller.HoleAusRessourcen();
 
                     this.EndeProtokollieren();
@@ -183,7 +179,7 @@ namespace WIFI.CS.Teil2.ViewModels
         /// </summary>
         private Models.Einstellung _AktuelleEinstellung = null;
 
-   
+
         /// <summary>
         /// Ruft den im Cache der Anwendung benutzten
         /// Schlüssel für die aktuelle Aufgabe ab

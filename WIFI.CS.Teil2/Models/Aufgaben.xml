@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <aufgaben>
+  <aufgabe name="User Search" symbol="&#x32;" view="WIFI.CS.Teil2.BenutzersucheView"/>
 	<aufgabe name="Application Log" symbol="3" view="WIFI.CS.Teil2.ProtokollView" />
-  <aufgabe name="TAP Example" symbol="z" view="WIFI.CS.Teil2.TAPView"/>
 </aufgaben>

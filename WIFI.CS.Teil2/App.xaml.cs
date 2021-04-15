@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 // Für die Erweiterungsmethoden
 // zum Holen von AssemblyInfos
@@ -32,10 +26,10 @@ namespace WIFI.CS.Teil2
 
             // Dafür sorgen, dass die DatenBasis einen Protokolleintrag
             // erstellt, wenn ein Typ für ToString() analysiert wurde
-            WIFI.Anwendung.Daten.DatenBasis.NeuerTypWurdeAnalysiert 
-                += (sender, e) 
+            WIFI.Anwendung.Daten.DatenBasis.NeuerTypWurdeAnalysiert
+                += (sender, e)
                 => AppKontext.Protokoll.Eintragen(
-                    $"WIFI.Anwendung.Daten.DatenBasis hat einen neuen Typ {e.NewObject} für ToString() analysiert...", 
+                    $"WIFI.Anwendung.Daten.DatenBasis hat einen neuen Typ {e.NewObject} für ToString() analysiert...",
                     Anwendung.Daten.ProtokollEintragTyp.NeueInstanz);
 
             var Protokolleintrag = new WIFI.Anwendung.Daten.ProtokollEintrag
@@ -79,9 +73,9 @@ namespace WIFI.CS.Teil2
             if (!WIFI.CS.Teil2.Properties.Settings.Default.ZahlenformatVonOS)
             {
                 System.Globalization.CultureInfo.CurrentCulture = System.Globalization.CultureInfo.CurrentUICulture;
-                
+
                 AppKontext.Protokoll.Eintragen(
-                    "Die Zahlenformatierung wird von der Anwendung gesteuert", 
+                    "Die Zahlenformatierung wird von der Anwendung gesteuert",
                     Anwendung.Daten.ProtokollEintragTyp.Warnung);
             }
 

@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="WIFI.CS.Teil2.Benutzergrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WIFI.CS.Teil2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" 
+             d:DesignWidth="800">
+
+    
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left">
+
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Firstname:">
+
+                    <Label.Style>
+                        <Style TargetType="Label">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding DunklesDesign}" Value="False">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding DunklesDesign}" Value="True">
+                                    <Setter Property="Foreground" Value="White"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Label.Style>
+                </Label>
+
+                <TextBox 
+                    Width="120" 
+                    Height="30"/>
+
+                <Button 
+                    Height="30" 
+                    Width="30" 
+                    Foreground="White"
+                    Style="{DynamicResource AppSymbol}"
+                    Background="Purple"
+                    FontFamily="Segoe MDL2 Assets"
+                    FontSize="12pt"
+                    Content="&#xE11A;"/>
+
+            </StackPanel>
+            
+        </StackPanel>
+        <DataGrid 
+            Grid.Row="1"
+            Margin="5 0 5 10"
+            Background="Transparent"
+            AlternatingRowBackground = "LightBlue"  
+            AlternationCount = "2" 
+            AutoGenerateColumns = "False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="UCID"/>
+                <DataGridTextColumn Header="Firstname"/>
+                <DataGridTextColumn Header="Lastname"/>
+                <DataGridTextColumn Header="Company"/>
+                <DataGridTextColumn Header="Location"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+    
+</UserControl>

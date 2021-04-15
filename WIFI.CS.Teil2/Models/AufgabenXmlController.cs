@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WIFI.CS.Teil2.Models
+﻿namespace WIFI.CS.Teil2.Models
 {
     /// <summary>
     /// Stellt einen Dienst zum Lesen und
@@ -33,7 +27,7 @@ namespace WIFI.CS.Teil2.Models
                         Symbol = a.Attributes["symbol"].Value,
                         ViewerName = a.Attributes["view"].Value
                     }
-                    ) ;
+                    );
             }
 
 

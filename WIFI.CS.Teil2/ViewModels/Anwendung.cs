@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WIFI.CS.Teil2.ViewModels
 {
@@ -369,13 +365,15 @@ namespace WIFI.CS.Teil2.ViewModels
         /// </summary>
         public ViewModels.EinstellungenManager EinstellungenManager
         {
-            get {
+            get
+            {
                 if (this._EinstellungenManager == null)
                 {
                     this._EinstellungenManager = this.AppKontext.Produziere<EinstellungenManager>();
                     this._EinstellungenManager.IstBeschäftigtSynchronisieren(mitViewModel: this);
                 }
-                return this._EinstellungenManager; }
+                return this._EinstellungenManager;
+            }
             set { this._EinstellungenManager = value; }
         }
 
@@ -480,19 +478,19 @@ namespace WIFI.CS.Teil2.ViewModels
                 // an die Lotto View weitergegeben. Damit die Änderung
                 // in allen offenen Fenstern zieht, ohne dieser Entscheidung
                 //if (value != Properties.Settings.Default.DunklesDesign)
-                
-                    Properties.Settings.Default.DunklesDesign = value;
 
-                    // Es wird davon ausgegangen, dass die 
-                    // Einstellung im Main() gespeichert wird
+                Properties.Settings.Default.DunklesDesign = value;
 
-                    // 20210406 Die Einstellung auch an das Viewmodel Lotto weitergeben
-                    // Wenn dieses existiert
-                    //if (this._Lotto != null)
-                    //{
-                    //    this._Lotto.DunklesDesign = value;
-                    //}
-                
+                // Es wird davon ausgegangen, dass die 
+                // Einstellung im Main() gespeichert wird
+
+                // 20210406 Die Einstellung auch an das Viewmodel Lotto weitergeben
+                // Wenn dieses existiert
+                //if (this._Lotto != null)
+                //{
+                //    this._Lotto.DunklesDesign = value;
+                //}
+
                 // Weil die Anwendung mehere Fenster haben kann,
                 // egal ob der Wert geändert wurde oder nicht...
                 this.OnPropertyChanged();

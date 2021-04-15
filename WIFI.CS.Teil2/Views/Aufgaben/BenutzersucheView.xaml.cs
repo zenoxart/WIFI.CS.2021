@@ -3,11 +3,11 @@
 namespace WIFI.CS.Teil2
 {
     /// <summary>
-    /// Interaktionslogik für LottoScheinView.xaml
+    /// Interaktionslogik für BenutzersucheView.xaml
     /// </summary>
-    public partial class LottoScheinView : UserControl
+    public partial class BenutzersucheView : UserControl
     {
-        public LottoScheinView()
+        public BenutzersucheView()
         {
             InitializeComponent();
         }
