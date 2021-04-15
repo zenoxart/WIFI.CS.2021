@@ -172,8 +172,6 @@
         <Style x:Key="Line" TargetType="Line">
             <Setter Property="Height" Value="1"/>
             <Setter Property="Stroke" Value="Black"/>
-            <Setter Property="X1" Value="5"/>
-            <Setter Property="X2" Value="770"/>
 
         </Style>
 

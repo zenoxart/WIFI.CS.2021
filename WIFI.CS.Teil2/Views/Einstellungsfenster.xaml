@@ -8,10 +8,7 @@
         mc:Ignorable="d"
         Title="{x:Static p:Texte.EinstellungsFensterName}" 
         Height="450" 
-        MinHeight="150"
-        Width="800"
-        MinWidth="800"
-        MaxWidth="800" KeyDown="SchließenMitEsc"
+        Width="800" KeyDown="SchließenMitEsc"
         
         >
     <Window.Style>
@@ -23,33 +20,5 @@
             </Style.Triggers>
         </Style>
     </Window.Style>
-    <ListBox Background="Transparent">
-
-        <ListBoxItem HorizontalAlignment="Center" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="5"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" 
-                           Content="{x:Static p:Texte.Sprache}"
-                           VerticalContentAlignment="Center"
-                           Style="{DynamicResource HellDunkelDesign}"
-                           />
-
-                <ComboBox Grid.Column="2"
-                          Width="100"
-                
-                          ItemsSource="{Binding AppKontext.Sprachen.StandardListe}"
-                          DisplayMemberPath="Name"
-                          SelectedItem="{Binding AktuelleSprache}"
-                          VerticalContentAlignment="Center"
-                          />
-            </Grid>
-        </ListBoxItem>
-        <ListBoxItem>
-            <Line Style="{StaticResource Line}"/>
-        </ListBoxItem>
-    </ListBox>
+    <local:EinstellungenView/>
 </Window>

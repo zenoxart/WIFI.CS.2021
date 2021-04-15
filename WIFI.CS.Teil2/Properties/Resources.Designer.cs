@@ -64,13 +64,25 @@ namespace WIFI.CS.Teil2.Properties {
         ///   Sucht eine lokalisierte Zeichenfolge, die &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
         ///&lt;aufgaben&gt;
         ///	&lt;aufgabe name=&quot;Application Log&quot; symbol=&quot;3&quot; view=&quot;WIFI.CS.Teil2.ProtokollView&quot; /&gt;
-        ///	&lt;aufgabe name=&quot;Lottery Draw&quot; symbol=&quot;$&quot; view=&quot;WIFI.CS.Teil2.LottoZiehungView&quot; /&gt;
-        ///	&lt;aufgabe name=&quot;Lottery Ticket&quot; symbol=&quot;@&quot; view=&quot;WIFI.CS.Teil2.LottoScheinView&quot; /&gt;
+        ///  &lt;aufgabe name=&quot;TAP Example&quot; symbol=&quot;z&quot; view=&quot;WIFI.CS.Teil2.TAPView&quot;/&gt;
         ///&lt;/aufgaben&gt; ähnelt.
         /// </summary>
         internal static string Aufgaben {
             get {
                 return ResourceManager.GetString("Aufgaben", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+        ///&lt;einstellungen&gt;
+        ///  &lt;einstellung name=&quot;Language&quot; symbol=&quot;z&quot; view=&quot;WIFI.CS.Teil2.Views.Einstellungen.Spracheneinstellungen&quot;/&gt;
+        ///&lt;/einstellungen&gt;
+        /// ähnelt.
+        /// </summary>
+        internal static string Einstellungen {
+            get {
+                return ResourceManager.GetString("Einstellungen", resourceCulture);
             }
         }
     }

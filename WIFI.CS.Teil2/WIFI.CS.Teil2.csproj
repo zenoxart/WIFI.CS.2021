@@ -61,6 +61,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Einstellungen\Spracheneinstellung.xaml.cs">
+      <DependentUpon>Spracheneinstellung.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EinstellungenView.xaml.cs">
+      <DependentUpon>EinstellungenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Einstellung.cs" />
+    <Compile Include="Models\EinstellungenXmlController.cs" />
+    <Compile Include="ViewModels\EinstellungenManager.cs" />
     <Compile Include="Views\Aufgaben\Elemente\LottoKugel.xaml.cs">
       <DependentUpon>LottoKugel.xaml</DependentUpon>
     </Compile>
@@ -116,6 +125,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Einstellungen\Spracheneinstellung.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EinstellungenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Aufgaben\Elemente\LottoKugel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +247,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Bilder\ZahnradHell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\Einstellungen.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Models\Einstellungen.de.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

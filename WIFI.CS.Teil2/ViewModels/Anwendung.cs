@@ -359,6 +359,27 @@ namespace WIFI.CS.Teil2.ViewModels
             }
         }
 
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private ViewModels.EinstellungenManager _EinstellungenManager = null;
+
+        /// <summary>
+        /// Ruft den Dienst zum Verändern von Einstellungen ab
+        /// </summary>
+        public ViewModels.EinstellungenManager EinstellungenManager
+        {
+            get {
+                if (this._EinstellungenManager == null)
+                {
+                    this._EinstellungenManager = this.AppKontext.Produziere<EinstellungenManager>();
+                    this._EinstellungenManager.IstBeschäftigtSynchronisieren(mitViewModel: this);
+                }
+                return this._EinstellungenManager; }
+            set { this._EinstellungenManager = value; }
+        }
+
+
 
 
         /// <summary>
@@ -413,7 +434,12 @@ namespace WIFI.CS.Teil2.ViewModels
             // Ab jetzt kann das Fenster mit {Binding} arbeiten
 
             // Bindet den AppKontext mit dem DataContext
-            View.DataContext = this;
+
+            // Übergibt den Aktuellen AppKontext als DbKontext
+            this.EinstellungenManager.Anwendung = this;
+
+            // Setzt den EinstellungsManager-Kontext auf den DataContext der neuen View 
+            View.DataContext = this.EinstellungenManager;
 
 
 
