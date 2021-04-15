@@ -60,5 +60,29 @@ namespace WIFI.CS.Teil2.Models
                 return Newtonsoft.Json.JsonConvert.DeserializeObject<System.DateTime[]>(AntwortText);
             }
         }
+        /// <summary>
+        /// Gibt die eine Ziehung durch Land und Datum zurück
+        /// </summary>
+
+        public async System.Threading.Tasks.Task<WIFI.Lotto.Daten.LottoZiehung> HoleZiehungAsync(WIFI.Lotto.Daten.Land land, DateTime dateTime)
+        {
+            const string Adresse = "{0}lotto?iso2land={1}&datum={2}";
+
+            using (var Antwort =
+                        await this.HttpClient.GetAsync(
+                                String.Format(
+                                    Adresse,
+                                    Properties.Settings.Default.UrlGatewayAPI,
+                                    land.ISO2,
+                                    dateTime.ToString("yyyy/MM/dd")
+                                    )
+                                )
+                   )
+            {
+                var AntwortText = await Antwort.Content.ReadAsStringAsync();
+
+                return Newtonsoft.Json.JsonConvert.DeserializeObject<WIFI.Lotto.Daten.LottoZiehung>(AntwortText);
+            }
+        }
     }
 }

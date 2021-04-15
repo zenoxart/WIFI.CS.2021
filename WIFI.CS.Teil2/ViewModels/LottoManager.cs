@@ -65,8 +65,8 @@ namespace WIFI.CS.Teil2.ViewModels
             }
             protected set
             {
-                    this._Länder = value;
-                    this.OnPropertyChanged();   
+                this._Länder = value;
+                this.OnPropertyChanged();
             }
         }
 
@@ -130,13 +130,15 @@ namespace WIFI.CS.Teil2.ViewModels
         /// </summary>
         public System.DateTime[] Ziehungen
         {
-            get {
+            get
+            {
 
                 if (this._Ziehungen == null)
                 {
                     this.ZiehungenInitialisieren();
                 }
-                return this._Ziehungen; }
+                return this._Ziehungen;
+            }
             protected set
             {
 
@@ -156,19 +158,19 @@ namespace WIFI.CS.Teil2.ViewModels
         {
 
             if (this.AktuellesLand == null) return;
-            
-                //this.StartProtokollieren();
 
-                this.Ziehungen = await this.Controller.HoleZiehungenAsync(this.AktuellesLand);
+            //this.StartProtokollieren();
+
+            this.Ziehungen = await this.Controller.HoleZiehungenAsync(this.AktuellesLand);
 
 
             if (this.Ziehungen.Length > 0)
             {
                 this.TagDerZiehung = this.Ziehungen[0];
             }
-                //this.EndeProtokollieren();
-            
-            
+            //this.EndeProtokollieren();
+
+
         }
 
         /// <summary>
@@ -216,16 +218,76 @@ namespace WIFI.CS.Teil2.ViewModels
         public System.DateTime? TagDerZiehung
         {
             get { return this._TagDerZiehung; }
-            set {
+            set
+            {
 
                 if (this._TagDerZiehung != value)
                 {
                     this._TagDerZiehung = value;
                     this.OnPropertyChanged();
+
+
+                    this.AktuelleZiehung = null;
+
+                    // Dem CommandManager mitteilen,
+                    // das die "CanExecute" Methoden
+                    // neu geprüft werden
+                    System.Windows.Input.CommandManager.InvalidateRequerySuggested();
                 }
-                 }
+            }
         }
 
+
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private WIFI.Lotto.Daten.LottoZiehung _AktuelleZiehung = null;
+
+        /// <summary>
+        /// Ruft die Zahlen einer Ziehung für 
+        /// das aktuelle Land an eim Tag ab
+        /// </summary>
+        public WIFI.Lotto.Daten.LottoZiehung AktuelleZiehung
+        {
+            get { return this._AktuelleZiehung; }
+            protected set
+            {
+                this._AktuelleZiehung = value;
+                this.OnPropertyChanged();
+
+            }
+        }
+
+        /// <summary>
+        /// Internes Feld für die Eigenschaft
+        /// </summary>
+        private WIFI.Anwendung.Befehl _HoleZiehung = null;
+
+        /// <summary>
+        /// Ruft den Befehl zum Abrufen der
+        /// Zahlen einer Zeihung für das aktuelle Land
+        /// für einen Tag ab
+        /// </summary>
+        public WIFI.Anwendung.Befehl HoleZiehung
+        {
+            get
+            {
+
+                if (this._HoleZiehung == null)
+                {
+                    this._HoleZiehung = new WIFI.Anwendung.Befehl(
+                            async p =>  this.AktuelleZiehung = 
+                                        await this.Controller.HoleZiehungAsync(
+                                            this.AktuellesLand, 
+                                            this.TagDerZiehung.Value)
+                            ,
+                            p => this.AktuellesLand != null && this.TagDerZiehung != null
+                        );
+                }
+                return this._HoleZiehung;
+            }
+            set { _HoleZiehung = value; }
+        }
 
     }
 }

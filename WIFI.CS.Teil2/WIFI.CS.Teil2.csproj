@@ -61,6 +61,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Views\Aufgaben\Elemente\LottoKugel.xaml.cs">
+      <DependentUpon>LottoKugel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Aufgaben\Elemente\LottoLandView.xaml.cs">
       <DependentUpon>LottoLandView.xaml</DependentUpon>
     </Compile>
@@ -117,6 +120,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Aufgaben\Elemente\LottoKugel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Aufgaben\Elemente\LottoLandView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,10 +218,6 @@
     <ProjectReference Include="..\WIFI.Anwendung\WIFI.Anwendung.csproj">
       <Project>{c3bf0e4f-40e2-4975-8abf-0898087c6f27}</Project>
       <Name>WIFI.Anwendung</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WIFI.Lotto.Daten\WIFI.Lotto.Daten.csproj">
-      <Project>{8539b9b4-6775-42ea-abf3-b7706f2405b0}</Project>
-      <Name>WIFI.Lotto.Daten</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

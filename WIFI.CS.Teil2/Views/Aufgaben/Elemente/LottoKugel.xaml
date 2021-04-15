@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="WIFI.CS.Teil2.LottoKugel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WIFI.CS.Teil2"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Height="60"
+             Width="60"
+             Name="Kugel"
+             Margin="5"
+             >
+    <Grid>
+            <!-- Für den Hintergrund eine Ellipse -->
+        <Ellipse >
+            <Ellipse.Style>
+                <Style TargetType="Ellipse">
+                    <!-- Abgeschaltet -->
+                    <Setter Property="Fill">
+                        <Setter.Value>
+                            <LinearGradientBrush>
+
+                                <GradientStop Color="WhiteSmoke" Offset="0.05"/>
+                                <GradientStop Color="Orange" Offset="0.75"/>
+                            </LinearGradientBrush>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Ellipse.Style>
+
+        </Ellipse>
+
+        <Label Content="{Binding ElementName=Kugel,Path=Zahl}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="20pt"
+                   Style="{DynamicResource HellDunkelDesign}"/>
+    </Grid>
+</UserControl>

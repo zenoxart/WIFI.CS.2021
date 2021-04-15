@@ -32,5 +32,14 @@ namespace WIFI.CS.Teil2.Models
         {
             throw new NotImplementedException();
         }
+
+        /// <summary>
+        /// Gibt die eine Ziehung durch Land und Datum zurück
+        /// </summary>
+
+        public Task<LottoZiehung> HoleZiehungAsync(Land land, DateTime dateTime)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
