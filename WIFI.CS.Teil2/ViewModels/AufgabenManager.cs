@@ -143,6 +143,8 @@ namespace WIFI.CS.Teil2.ViewModels
         /// </summary>
         private string SchlüsselAktuelleAufgabe => this.GetType().FullName + ".AktuelleAufgabe";
 
+        
+
         /// <summary>
         /// Ruft den aktuellen Anwendungspunkt ab, oder legt diesen fest
         /// </summary>

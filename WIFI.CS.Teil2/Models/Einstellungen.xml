@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <einstellungen>
-  <einstellung name="Language" symbol="z" view="WIFI.CS.Teil2.Spracheneinstellung"/>
+  <einstellung name="Language" symbol="&#x26;" view="WIFI.CS.Teil2.SpracheinstellungView"/>
 </einstellungen>

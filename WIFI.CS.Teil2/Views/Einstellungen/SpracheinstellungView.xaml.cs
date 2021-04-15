@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WIFI.CS.Teil2
 {
     /// <summary>
-    /// Interaktionslogik für Spracheneinstellung.xaml
+    /// Interaktionslogik für SpracheinstellungView.xaml
     /// </summary>
-    public partial class Spracheneinstellung : UserControl
+    public partial class SpracheinstellungView : UserControl
     {
-        public Spracheneinstellung()
+        public SpracheinstellungView()
         {
             InitializeComponent();
         }

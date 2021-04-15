@@ -32,7 +32,7 @@
             Background="Transparent"
             BorderThickness="0"
             
-            ItemsSource="{Binding Liste}"
+            ItemsSource="{Binding EinstellungenListe}"
             SelectedItem="{Binding AktuelleAufgabe}"
             
             ScrollViewer.HorizontalScrollBarVisibility="Disabled"

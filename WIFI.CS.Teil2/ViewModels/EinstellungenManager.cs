@@ -45,7 +45,7 @@ namespace WIFI.CS.Teil2.ViewModels
         /// Ruft die aktuell unterstützten
         /// Einstellungspunkte ab.
         /// </summary>
-        public Models.Einstellungen Liste
+        public Models.Einstellungen EinstellungenListe
         {
             get
             {
@@ -113,8 +113,8 @@ namespace WIFI.CS.Teil2.ViewModels
 
                     this.StartProtokollieren();
 
-
-                    this.Liste = this.Controller.HoleAusRessourcen();
+                    
+                    this.EinstellungenListe = this.Controller.HoleAusRessourcen();
 
                     this.EndeProtokollieren();
                     this.InitialisiereEinstellungenLäuft = false;
@@ -129,11 +129,11 @@ namespace WIFI.CS.Teil2.ViewModels
             // Benutzen sauber prüfen, ob der Wert
             // im gültigen Bereich. Spezialbenutzer
             // könnten herumgepfuscht haben
-            var i = Properties.Settings.Default.IndexAktuelleAufgabe;
+            var i = Properties.Settings.Default.IndexAktuelleEinstellung;
 
-            if (this.Liste != null && i >= 0 && i < this.Liste.Count)
+            if (this.EinstellungenListe != null && i >= 0 && i < this.EinstellungenListe.Count)
             {
-                this.AktuelleEinstellung = this.Liste[i];
+                this.AktuelleEinstellung = this.EinstellungenListe[i];
             }
 
         }
@@ -153,7 +153,7 @@ namespace WIFI.CS.Teil2.ViewModels
             {
                 if (this._VorhandeneViewer == null)
                 {
-                    this._VorhandeneViewer = new System.Collections.Hashtable(this.Liste.Count);
+                    this._VorhandeneViewer = new System.Collections.Hashtable(this.EinstellungenListe.Count);
                     this.AppKontext.Protokoll.Eintragen(
                         $"{this} hat den Cache für die Viewer initialisiert...",
                         WIFI.Anwendung.Daten.ProtokollEintragTyp.NeueInstanz);
@@ -183,6 +183,7 @@ namespace WIFI.CS.Teil2.ViewModels
         /// </summary>
         private Models.Einstellung _AktuelleEinstellung = null;
 
+   
         /// <summary>
         /// Ruft den im Cache der Anwendung benutzten
         /// Schlüssel für die aktuelle Aufgabe ab
@@ -228,8 +229,8 @@ namespace WIFI.CS.Teil2.ViewModels
                     // hinterlegen, damit diese bei einem Neustart
                     // wieder ausgewählt werden kann
                     // Index aus den Ressourcen geladen
-                    Properties.Settings.Default.IndexAktuelleAufgabe
-                        = this.Liste.IndexOf(this._AktuelleEinstellung);
+                    Properties.Settings.Default.IndexAktuelleEinstellung
+                        = this.EinstellungenListe.IndexOf(this._AktuelleEinstellung);
 
                     this.AktiverViewer = null;
                 }
@@ -329,7 +330,7 @@ namespace WIFI.CS.Teil2.ViewModels
         private WIFI.CS.Teil2.ViewModels.Anwendung _Anwendung;
 
         /// <summary>
-        /// Stellt den Zugriff auf die Gesammtanwendung zur Verfügung
+        /// Stellt den Haupt-Appkontext als Property zur Verfügung
         /// </summary>
         public WIFI.CS.Teil2.ViewModels.Anwendung Anwendung
         {

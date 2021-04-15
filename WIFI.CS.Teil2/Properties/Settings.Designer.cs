@@ -97,5 +97,17 @@ namespace WIFI.CS.Teil2.Properties {
                 this["ZahlenformatVonOS"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int IndexAktuelleEinstellung {
+            get {
+                return ((int)(this["IndexAktuelleEinstellung"]));
+            }
+            set {
+                this["IndexAktuelleEinstellung"] = value;
+            }
+        }
     }
 }
