@@ -161,6 +161,15 @@ namespace WIFI.Lotto.Daten
             }
         }
 
+
+    }
+
+    /// <summary>
+    /// Stellt die Daten für eine LottoZiehung bereit
+    /// </summary>
+    public class LottoZiehung : LottoTip
+    {
+
         /// <summary>
         /// Internes Feld für die Eigenschaft
         /// </summary>
@@ -229,14 +238,5 @@ namespace WIFI.Lotto.Daten
                 }
             }
         }
-
-    }
-
-    /// <summary>
-    /// Stellt die Daten für eine LottoZiehung bereit
-    /// </summary>
-    public class LottoZiehung
-    {
-
     }
 }

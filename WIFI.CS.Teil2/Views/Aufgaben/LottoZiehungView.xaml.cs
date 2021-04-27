@@ -24,5 +24,10 @@ namespace WIFI.CS.Teil2
         {
             InitializeComponent();
         }
+
+        private void LottoKugel_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

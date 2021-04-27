@@ -25,5 +25,11 @@ namespace WIFI.CS.Teil2.Models
         /// Gibt die Tage mit einer Ziehung zurück
         /// </summary>
         System.Threading.Tasks.Task<DateTime[]> HoleZiehungenAsync(Land land);
+
+        /// <summary>
+        /// Gibt die eine Ziehung durch Land und Datum zurück
+        /// </summary>
+
+        System.Threading.Tasks.Task<WIFI.Lotto.Daten.LottoZiehung> HoleZiehungAsync(WIFI.Lotto.Daten.Land land, DateTime dateTime);
     }
 }

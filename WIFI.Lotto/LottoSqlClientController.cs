@@ -110,5 +110,49 @@ namespace WIFI.Lotto
                 this.EndeProtokollieren();
             return Tage.ToArray();
         }
+
+        /// <summary>
+        /// Gibt die Daten einer Ziehung eines Landes an einem Tag zurück
+        /// </summary>
+        /// <param name="land">Der ISO2 Code des Landes</param>
+        /// <returns>Ein Array mit den Tagen einer Ziehung</returns>
+        public WIFI.Lotto.Daten.LottoZiehung HoleZiehung(string land,DateTime datum)
+        {
+            this.StartProtokollieren();
+            var Ziehungen = new WIFI.Lotto.Daten.LottoZiehung { Datum= datum };
+
+            using (var Verbindung = new System.Data.SqlClient.SqlConnection(this.ConnectionString))
+            {
+                using (var Befehl = new System.Data.SqlClient.SqlCommand("HoleZiehung", Verbindung))
+                {
+                    Befehl.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    Befehl.Parameters.AddWithValue("@land", land);
+                    Befehl.Parameters.AddWithValue("@datum", datum);
+
+                    Befehl.Prepare();
+
+                    Verbindung.Open();
+
+                    using (var Leser = Befehl.ExecuteReader(System.Data.CommandBehavior.CloseConnection))
+                    {
+                        if (Leser.Read()){
+                            Ziehungen.Zahl1 = (int)Leser["Zahl1"];
+                            Ziehungen.Zahl2 = (int)Leser["Zahl2"];
+                            Ziehungen.Zahl3 = (int)Leser["Zahl3"];
+                            Ziehungen.Zahl4 = (int)Leser["Zahl4"];
+                            Ziehungen.Zahl5 = (int)Leser["Zahl5"];
+                            Ziehungen.Zahl6 = (int)Leser["Zahl6"];
+                            Ziehungen.ZusatzZahl = (int)Leser["Zusatzzahl"];
+                        }
+                        else 
+                            Ziehungen = null;
+                    }
+                }
+            }
+
+            this.EndeProtokollieren();
+            return Ziehungen;
+        }
     }
 }

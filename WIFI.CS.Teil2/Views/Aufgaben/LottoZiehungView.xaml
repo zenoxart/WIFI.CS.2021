@@ -31,15 +31,42 @@
             <Label 
                 Width="100"
                 Content="{x:Static p:Texte.Datum}"
-                Style="{DynamicResource HellDunkelDesign}"/>
+                Style="{DynamicResource HellDunkelDesign}"
+                VerticalAlignment="Center"/>
             <ComboBox  
                 Width="150"
-                
+                Height="25"
                 ItemsSource="{Binding Ziehungen}"
                 SelectedItem="{Binding TagDerZiehung}"
+                VerticalContentAlignment="Center"
                 
                 />
+            <Button
+                Style="{DynamicResource AppSymbol}"
+                Template="{DynamicResource AppSymbolCanExecute}"
+                Background="Transparent"
+                Margin="5,0,0,0"
+                FontFamily="Wingdings"
+                Content="&#x24;"
+                FontSize="20"
+                Command="{Binding HoleZiehung}"/>
 
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="2"
+            Orientation="Horizontal"
+            VerticalAlignment="Top"
+            Margin="20">
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.Zahl1}"/>
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.Zahl2}"/>
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.Zahl3}"/>
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.Zahl4}"/>
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.Zahl5}"/>
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.Zahl6}"/>
+            <Label Content="/" Style="{DynamicResource HellDunkelDesign}" FontSize="27" VerticalAlignment="Center"/>
+            
+            <local:LottoKugel Zahl="{Binding AktuelleZiehung.ZusatzZahl}"/>
         </StackPanel>
     </Grid>
 </UserControl>

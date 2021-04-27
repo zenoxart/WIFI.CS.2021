@@ -83,6 +83,27 @@ namespace WIFI.Gateway.Controllers
             return this.Controller.HoleZiehungen(iso2Land);
         }
 
+
+        /// <summary>
+        /// GIbt die Daten einer Ziehung für einen Tag und ein Land zurück
+        /// </summary>
+        /// <param name="iso2Land">Der ISO2 Code des Landes,
+        /// von dem die tage mit einer Ziehung benötigt werden</param>
+        /// <returns>Ein Array mit den Tagen einer Ziehung</returns>
+        public WIFI.Lotto.Daten.LottoZiehung Get(string iso2Land, DateTime datum)
+        {
+            var Ziehung = this.Controller.HoleZiehung(iso2Land, datum);
+
+            if (Ziehung != null)
+            {
+                Ziehung.Land = (from l in this.Controller.HoleLänder(this.Request.Headers.AcceptLanguage.ToString())
+                                where string.Compare(l.ISO2, iso2Land, ignoreCase: true) == 0
+                                select l).FirstOrDefault();
+            }
+
+            return Ziehung;
+        }
+
         // POST api/<controller>
         public void Post([FromBody] string value)
         {

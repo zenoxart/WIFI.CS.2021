@@ -49,10 +49,11 @@
       <Field Name="_Einträge" Hidden="true" />
       <Field Name="_EnthältFehler" Hidden="true" />
       <Field Name="_EnthältFehlerBlinken" Hidden="true" />
+      <Field Name="_Pfad" Hidden="true" />
       <Field Name="_Rückrufe" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQCAAAAJAAKEAFQAASABAEIABAAAAEAgAA=</HashCode>
+      <HashCode>AAAAAAEAAAQCAAAAJAALEAFQAASABAEIABAgAAEAgAA=</HashCode>
       <FileName>ProtokollManager.cs</FileName>
     </TypeIdentifier>
   </Class>

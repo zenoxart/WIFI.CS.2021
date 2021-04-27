@@ -36,28 +36,27 @@
   <Class Name="WIFI.Lotto.Daten.LottoTip">
     <Position X="3.75" Y="4" Width="2" />
     <Members>
-      <Field Name="_Datum" Hidden="true" />
-      <Field Name="_Land" Hidden="true" />
       <Field Name="_Zahl1" Hidden="true" />
       <Field Name="_Zahl2" Hidden="true" />
       <Field Name="_Zahl3" Hidden="true" />
       <Field Name="_Zahl4" Hidden="true" />
       <Field Name="_Zahl5" Hidden="true" />
       <Field Name="_Zahl6" Hidden="true" />
-      <Field Name="_ZusatzZahl" Hidden="true" />
     </Members>
     <TypeIdentifier>
-      <HashCode>CgAEAAAAAAAAAAAEAAAAAAAAAAACKACBAgAAEAgAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAIACBAAAAEAgAAgA=</HashCode>
       <FileName>Tipps.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Land" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="WIFI.Lotto.Daten.LottoZiehung">
     <Position X="0.5" Y="8.25" Width="5.25" />
+    <Members>
+      <Field Name="_Datum" Hidden="true" />
+      <Field Name="_Land" Hidden="true" />
+      <Field Name="_ZusatzZahl" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CgAEAAAAAAAAAAAAAAAAAAAAAAACCAAAAgAAAAAAAAA=</HashCode>
       <FileName>Tipps.cs</FileName>
     </TypeIdentifier>
   </Class>
